@@ -36,6 +36,24 @@ Asegúrate de tener instalado [Node.js](https://nodejs.org/).
     ```
     Los archivos generados estarán en la carpeta `dist/`.
 
+## 🚢 Despliegue automático en GitHub Pages
+
+El repositorio incluye un flujo de GitHub Actions para construir y publicar la landing page en GitHub Pages cada vez que hagas push a `main` o ejecutes el workflow manualmente.
+
+### 1. Activar GitHub Pages
+
+1. En GitHub, ve a **Settings → Pages** del repositorio.
+2. En **Source**, selecciona **GitHub Actions** y guarda los cambios. (No necesitas crear ramas `gh-pages`; el workflow se encargará de publicarla.)
+3. Opcional: configura tu dominio personalizado en la misma sección.
+
+### 2. Ejecutar el despliegue
+
+1. Haz un commit y push a `main` (o lanza el workflow **Deploy to GitHub Pages** desde la pestaña **Actions**).
+2. GitHub Actions instalará dependencias, generará la carpeta `dist/` con `npm run build` y publicará el contenido en Pages.
+3. La URL generada aparecerá en la salida del job de deploy y en **Settings → Pages**.
+
+> Si publicas como un _Project Page_ (por ejemplo `https://usuario.github.io/repositorio`), añade `site` y `base` en `astro.config.mjs` para que los assets usen rutas relativas. Para un _User/Organization Page_ (`https://usuario.github.io`), no es necesario.
+
 ## 📂 Gestión de Contenido
 
 El sitio está diseñado para separar el código del contenido. 
