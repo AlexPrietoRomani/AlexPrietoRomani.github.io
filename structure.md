@@ -9,7 +9,8 @@ alex-prieto-landingpage/
 │   │   └── Alex_Prieto_Romani_CV.pdf # CV descargable
 │   ├── images/
 │   │   ├── courses/            # Imágenes de cursos
-│   │   └── profile/            # Imagen de perfil (si se descarga local)
+│   │   ├── skills/             # Logos de tecnologías (QGIS, etc.)
+│   │   └── profile/            # Imagen de perfil
 │   ├── fonts/                  # (Opcional si no se usa Google Fonts CDN)
 │   └── favicon.svg
 ├── src/
