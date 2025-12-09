@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/layout/Navbar.astro';
+import Hero from '../components/landing/Hero.astro';
+import About from '../components/landing/About.astro';
+import Skills from '../components/landing/Skills.astro';
+import Courses from '../components/landing/Courses.astro';
+import Projects from '../components/landing/Projects.astro';
+import Contact from '../components/landing/Contact.astro';
+import Footer from '../components/layout/Footer.astro';
+import { siteData } from '../data/siteData';
+import '../styles/global.css';
+
+const { cv, hero } = siteData;
+---
+
+<Layout title={`${hero.title} | ${hero.kicker}`}>
+  <Navbar />
+  
+  <main>
+    <Hero />
+    <About />
+    <Skills />
+    <Courses />
+    <Projects />
+    
+    <!-- CV Section -->
+    <div id="cv" class="section cv-section">
+      <div class="container text-center">
+        <h2 class="section-title">{cv.title}</h2>
+        <p class="section-intro">{cv.subtitle}</p>
+        <a href={cv.path} download class="btn btn-primary btn-lg">
+          {cv.buttonText}
+        </a>
+      </div>
+    </div>
+    
+    <Contact />
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .text-center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .btn-lg { padding: 1rem 2rem; font-size: 1.25rem; text-decoration: none; }
+</style>

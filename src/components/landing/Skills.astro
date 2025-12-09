@@ -1,0 +1,92 @@
+---
+import { siteData } from '../../data/siteData';
+
+const { skills } = siteData;
+---
+
+<div class="section skills-section">
+  <div class="container">
+    <h2 class="section-title">Tecnologías y herramientas</h2>
+    
+    <div class="skills-grid">
+      {skills.map(category => (
+        <div class="skill-category-card">
+          <h3 class="category-title">{category.category}</h3>
+          <div class="tech-list">
+            {category.items.map(tech => (
+              <div class="tech-item" title={tech.name}>
+                <i class={`tech-icon ${tech.icon}`}></i>
+                <span class="tech-name">{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-category-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+  }
+
+  .skill-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(34, 84, 61, 0.12);
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--deep-forest);
+    border-bottom: 2px solid rgba(47, 133, 90, 0.1);
+    padding-bottom: 0.75rem;
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 12px;
+    background-color: var(--agro-light);
+    min-width: 80px;
+    transition: background-color 0.2s;
+  }
+  
+  .tech-item:hover {
+    background-color: rgba(47, 133, 90, 0.1);
+  }
+
+  .tech-icon {
+    font-size: 2.5rem;
+    /* Ensure colored icons render correctly if devicon supports it */
+  }
+
+  .tech-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import { siteData } from '../../data/siteData';
+
+const { projects } = siteData;
+---
+
+<div id="projects" class="section projects-section">
+  <div class="container">
+    <h2 class="section-title">Proyectos destacados</h2>
+    <p class="section-intro">Iniciativas personales y de investigación que combinan ciencia de datos, IA y experiencia agronómica.</p>
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <article class="project-card">
+          <h3 class="project-title">{project.name}</h3>
+          <p class="project-description">{project.description}</p>
+          <div class="project-tags">
+            {project.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+          <a href={project.link} target="_blank" class="project-link">Ver en GitHub</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+---
+import { siteData } from '../../data/siteData';
+
+const { contact } = siteData;
+---
+
+<div id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="section-title">Contáctame</h2>
+    <div class="contact-card">
+      <p>¿Quieres colaborar, conocer más sobre mis cursos o invitarme a un proyecto?</p>
+      <ul class="contact-list">
+        <li>
+          <strong>Correo:</strong> <a href={`mailto:${contact.email}`}>{contact.email}</a>
+        </li>
+        <li>
+          <strong>LinkedIn:</strong> <a href={contact.linkedinUrl} target="_blank">{contact.linkedin}</a>
+        </li>
+        <li>
+          <strong>GitHub:</strong> <a href={contact.githubUrl} target="_blank">{contact.github}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+---
+import { siteData } from '../../data/siteData';
+
+const { about } = siteData;
+---
+
+<div class="section about-section">
+  <div class="container">
+    <h2 class="section-title">Sobre mí</h2>
+    <div class="bio-grid">
+      {about.cards.map(card => (
+        <div class="bio-card">
+          <h3>{card.title}</h3>
+          <p>{card.content}</p>
+        </div>
+      ))}
+    </div>
+    
+    <h3 class="section-subtitle">Focos actuales</h3>
+    <ul class="focus-list">
+      {about.focus.map(item => (
+        <li><strong>{item.title}</strong>{item.description}</li>
+      ))}
+    </ul>
+  </div>
+</div>

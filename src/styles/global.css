@@ -1,0 +1,1959 @@
+/* =========================================================
+   1. TOKENS GLOBALES: paleta y tipografía
+   ========================================================= */
+/* Variables reutilizables para toda la plataforma */
+:root {
+  --agro-green: #2F855A;
+  --deep-forest: #22543D;
+  --agro-light: #F7FAF2;
+  --data-blue: #2B6CB0;
+  --deep-data-blue: #1E3A8A;
+  --charcoal: #1F2933;
+  --card-shadow: 0 24px 40px rgba(34, 84, 61, 0.18);
+}
+
+/* =========================================================
+   2. BASE: html, body y contenedor general (.app-shell)
+   ========================================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--agro-light);
+  color: var(--charcoal);
+  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+/* Contenedor principal para que ocupe todo el ancho de la página */
+.app-shell .container {
+  max-width: none;
+  width: 100%;
+  padding-left: clamp(1rem, 3vw, 3rem);
+  padding-right: clamp(1rem, 3vw, 3rem);
+}
+
+/* Enlaces dentro de la app */
+.app-shell a,
+.app-shell .btn-link {
+  color: var(--data-blue);
+}
+
+/* =========================================================
+   3. NAVEGACIÓN PRINCIPAL SUPERIOR
+   ========================================================= */
+.app-shell .primary-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(34, 84, 61, 0.12);
+  padding: 1rem 0;
+}
+
+.app-shell .primary-nav .container {
+  position: relative;
+}
+
+/* Marca / logo texto */
+.app-shell .primary-nav .brand-link {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--deep-forest);
+  text-decoration: none;
+}
+
+.app-shell .primary-nav .brand-link:hover {
+  text-decoration: none;
+  color: var(--agro-green);
+}
+
+/* Lista de links de navegación */
+.app-shell .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Botón de toggle para navegación móvil */
+.app-shell .nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.app-shell .nav-toggle:focus-visible {
+  outline: 2px solid var(--data-blue);
+  outline-offset: 4px;
+}
+
+.app-shell .nav-toggle:hover {
+  background-color: rgba(47, 133, 90, 0.12);
+}
+
+/* Barras del ícono hamburguesa */
+.app-shell .nav-toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: var(--charcoal);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Estado abierto del toggle */
+.app-shell .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-of-type(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.app-shell .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-of-type(2) {
+  opacity: 0;
+}
+
+.app-shell .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-of-type(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Enlaces de la barra */
+.app-shell .nav-link {
+  font-weight: 600;
+  color: rgba(31, 41, 51, 0.8);
+  text-decoration: none;
+}
+
+.app-shell .nav-link:hover,
+.app-shell .nav-link:focus {
+  color: var(--deep-data-blue);
+  text-decoration: none;
+}
+
+/* =========================================================
+   4. SECCIONES GENÉRICAS (landing, bio, skills, proyectos, etc.)
+   ========================================================= */
+.app-shell .section {
+  padding: 4rem 0;
+}
+
+.app-shell .section-title {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--deep-forest);
+}
+
+.app-shell .section-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  color: var(--deep-data-blue);
+}
+
+.app-shell .section-intro {
+  max-width: 760px;
+  margin: 0 auto 2rem auto;
+  color: rgba(31, 41, 51, 0.75);
+}
+
+/* =========================================================
+   5. HERO DE LA LANDING (presentación general)
+   ========================================================= */
+.app-shell .hero-section {
+  background: linear-gradient(135deg, rgba(47, 133, 90, 0.12), rgba(43, 108, 176, 0.08));
+  padding-top: 6rem;
+}
+
+.app-shell .hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--deep-forest);
+}
+
+.app-shell .hero-subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: rgba(31, 41, 51, 0.75);
+}
+
+.app-shell .hero-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.app-shell .hero-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* Grupo de botones de llamada a la acción */
+.app-shell .hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* =========================================================
+   6. BOTONES (CTA principal y secundario)
+   ========================================================= */
+/* Base button styles */
+.app-shell .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  gap: 0.5rem;
+  line-height: 1.2;
+}
+
+/* Botón primario */
+.app-shell .btn-primary {
+  background-color: var(--agro-green);
+  border-color: var(--agro-green);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(34, 84, 61, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-shell .btn-primary:hover,
+.app-shell .btn-primary:focus {
+  background-color: var(--deep-forest);
+  border-color: var(--deep-forest);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(34, 84, 61, 0.22);
+}
+
+.app-shell .btn-primary:active {
+  background-color: #1b3b2d;
+  border-color: #1b3b2d;
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(34, 84, 61, 0.16);
+}
+
+/* Botón outline */
+.app-shell .btn-outline-primary {
+  color: var(--deep-forest);
+  border-color: var(--deep-forest);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.app-shell .btn-outline-primary:hover,
+.app-shell .btn-outline-primary:focus {
+  color: #fff;
+  background-color: var(--deep-forest);
+  border-color: var(--deep-forest);
+  box-shadow: 0 16px 28px rgba(34, 84, 61, 0.18);
+  transform: translateY(-1px);
+}
+
+.app-shell .btn-outline-primary:active {
+  background-color: #1b3b2d;
+  border-color: #1b3b2d;
+  color: #fff;
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(34, 84, 61, 0.12);
+}
+
+/* Tarjetas visuales en el hero */
+.app-shell .hero-stat,
+.app-shell .hero-typing {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(34, 84, 61, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+/* =========================================================
+   7. SECCIÓN "SOBRE MÍ"
+   ========================================================= */
+.app-shell .bio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.app-shell .bio-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 18px 35px rgba(27, 63, 107, 0.12);
+}
+
+.app-shell .focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.app-shell .focus-list li {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 12px 25px rgba(34, 84, 61, 0.12);
+}
+
+/* =========================================================
+   8. SECCIÓN SKILLS / HABILIDADES
+   ========================================================= */
+.app-shell .skills-section .row {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(27, 63, 107, 0.12);
+}
+
+.app-shell .skills-section h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: var(--deep-data-blue);
+}
+
+/* =========================================================
+   9. SECCIÓN PROYECTOS
+   ========================================================= */
+.app-shell .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.app-shell .project-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 22px 40px rgba(34, 84, 61, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.app-shell .project-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--deep-forest);
+}
+
+.app-shell .project-description {
+  flex-grow: 1;
+  color: rgba(31, 41, 51, 0.75);
+}
+
+.app-shell .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.app-shell .project-tags .tag {
+  background: rgba(43, 108, 176, 0.12);
+  color: var(--deep-data-blue);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.app-shell .project-link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.app-shell .project-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   10. SECCIÓN CV / DESCARGA CURRÍCULUM
+   ========================================================= */
+.app-shell .cv-section {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(43, 108, 176, 0.12), rgba(47, 133, 90, 0.12));
+}
+
+.app-shell .cv-section .btn {
+  padding: 0.9rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   11. SECCIÓN CONTACTO
+   ========================================================= */
+.app-shell .contact-section {
+  background: #ffffff;
+}
+
+.app-shell .contact-card {
+  background: rgba(47, 133, 90, 0.08);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 18px 30px rgba(27, 63, 107, 0.12);
+}
+
+.app-shell .contact-list {
+  list-style: none;
+  margin: 1.5rem 0 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.app-shell .contact-list a {
+  font-weight: 600;
+  color: var(--deep-data-blue);
+  text-decoration: none;
+}
+
+.app-shell .contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   12. LANDING DE CURSOS (cuadro de cursos del repositorio)
+   ========================================================= */
+/* Fondo de la landing de cursos */
+.app-shell .landing-page {
+  background: linear-gradient(135deg, rgba(47, 133, 90, 0.12), rgba(43, 108, 176, 0.08));
+  min-height: calc(100vh - 40px);
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+/* Intro de la landing de cursos */
+.app-shell .landing-intro {
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Etiqueta superior tipo "kicker" */
+.app-shell .landing-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--deep-forest);
+  background-color: rgba(47, 133, 90, 0.12);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+}
+
+.app-shell .landing-title {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: var(--deep-forest);
+}
+
+.app-shell .landing-subtitle {
+  font-size: 1.05rem;
+  color: rgba(31, 41, 51, 0.75);
+  margin-top: 1rem;
+}
+
+/* Grid de tarjetas de cursos */
+.app-shell .course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Tarjeta individual de curso en la landing */
+.app-shell .course-card {
+  position: relative;
+  border: none;
+  width: 100%;
+  padding: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  background-image: linear-gradient(140deg, rgba(34, 84, 61, 0.92), rgba(43, 108, 176, 0.88)), var(--card-image, none);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover sobre la tarjeta */
+.app-shell .course-card:hover,
+.app-shell .course-card:focus {
+  transform: translateY(-10px);
+  box-shadow: 0 32px 60px rgba(34, 84, 61, 0.28);
+  outline: none;
+}
+
+/* Capa de gradiente extra encima de la imagen */
+.app-shell .course-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(15, 32, 24, 0.05), rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+
+/* Contenido interno de la tarjeta */
+.app-shell .course-card-body {
+  position: relative;
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.app-shell .course-card-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.app-shell .course-card-title {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.app-shell .course-card-meta {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* =========================================================
+   13. PÁGINA DE CURSO (interior: hero + controles + layout)
+   ========================================================= */
+.app-shell .course-page {
+  padding-bottom: 4rem;
+}
+
+/* Permite que el curso use todo el ancho */
+.app-shell .course-page .container {
+  max-width: none;
+}
+
+/* Hero superior de la página de curso */
+.app-shell .course-hero {
+  background: linear-gradient(135deg, rgba(34, 84, 61, 0.95), rgba(27, 63, 107, 0.9));
+  color: #ffffff;
+  padding: 4.5rem 0 3.5rem 0;
+  border-radius: 0 0 48px 48px;
+  box-shadow: 0 30px 60px rgba(34, 84, 61, 0.25);
+}
+
+.app-shell .course-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.app-shell .course-hero-title {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+}
+
+.app-shell .course-hero-subtitle {
+  max-width: 680px;
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Barra de controles justo debajo del hero */
+.app-shell .course-controls {
+  margin-top: -2.5rem;
+  background: #ffffff;
+  padding: 1.75rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(27, 63, 107, 0.12);
+  position: relative;
+  z-index: 2;
+}
+
+/* Barra de selección de parte, reset, etc. */
+.app-shell .course-control-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Etiqueta de “Parte activa” */
+.app-shell .course-active-part {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--deep-data-blue);
+  background: rgba(43, 108, 176, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+}
+
+.app-shell .course-active-part .fa {
+  color: var(--data-blue);
+}
+
+/* Enlace para reiniciar el curso */
+.app-shell .reset-course {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--agro-green) !important;
+  text-decoration: none !important;
+}
+
+.app-shell .reset-course .fa {
+  transition: transform 0.3s ease;
+}
+
+.app-shell .reset-course:hover .fa {
+  transform: translateX(-4px);
+}
+
+/* Layout principal de la página de curso (sidebar + contenido) */
+.app-shell .course-layout {
+  margin-top: 3rem;
+}
+
+/* Ajuste del gutter de bootstrap para este layout */
+.app-shell .course-layout .row {
+  --bs-gutter-x: 1rem;
+}
+
+/* =========================================================
+   14. SIDEBAR DE SESIONES (índice del curso)
+   ========================================================= */
+.app-shell .course-sidebar {
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(27, 63, 107, 0.12);
+  padding: 1.75rem 1.5rem;
+  position: sticky;
+  top: 120px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+}
+
+/* Scrollbar del sidebar */
+.app-shell .course-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app-shell .course-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(43, 108, 176, 0.2);
+  border-radius: 999px;
+}
+
+/* Encabezado del sidebar */
+.app-shell .sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.app-shell .sidebar-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: rgba(43, 108, 176, 0.75);
+}
+
+.app-shell .sidebar-title {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--deep-forest);
+}
+
+/* Resumen de selección actual (curso/parte) */
+.app-shell .sidebar-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: rgba(47, 133, 90, 0.08);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.app-shell .sidebar-selection-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(31, 41, 51, 0.6);
+}
+
+.app-shell .sidebar-selection-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--deep-forest);
+}
+
+/* Acordeón de partes (Parte I, Parte II, etc.) */
+.app-shell .course-sidebar-accordion .accordion-item {
+  border: none;
+  background: transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 10px 24px rgba(34, 84, 61, 0.08);
+}
+
+.app-shell .course-sidebar-accordion .accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.app-shell .course-sidebar-accordion .accordion-button {
+  font-weight: 600;
+  color: var(--deep-forest);
+  background: rgba(47, 133, 90, 0.08);
+  gap: 0.75rem;
+}
+
+.app-shell .course-sidebar-accordion .accordion-button:not(.collapsed) {
+  background: rgba(47, 133, 90, 0.18);
+  color: var(--deep-forest);
+  box-shadow: inset 0 -1px 0 rgba(47, 133, 90, 0.15);
+}
+
+.app-shell .course-sidebar-accordion .accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(43, 108, 176, 0.25);
+}
+
+.app-shell .sidebar-part-title {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.app-shell .sidebar-part-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(31, 41, 51, 0.6);
+}
+
+.app-shell .course-sidebar-accordion .accordion-body {
+  padding: 1rem 1.25rem 1.25rem;
+  background: #ffffff;
+}
+
+/* Lista de sesiones dentro de cada parte */
+.app-shell .session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Botón de cada sesión */
+.app-shell .session-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  border: 1px solid rgba(43, 108, 176, 0.18);
+  background: rgba(43, 108, 176, 0.06);
+  color: var(--deep-forest);
+  border-radius: 14px;
+  padding: 0.65rem 0.9rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+.app-shell .session-list-item:hover,
+.app-shell .session-list-item:focus {
+  background: rgba(43, 108, 176, 0.16);
+  border-color: rgba(43, 108, 176, 0.35);
+  transform: translateX(4px);
+}
+
+/* Estado activo de la sesión seleccionada */
+.app-shell .session-list-item.active {
+  background: var(--agro-green);
+  border-color: var(--agro-green);
+  color: #ffffff;
+  box-shadow: 0 16px 32px rgba(47, 133, 90, 0.2);
+}
+
+/* Índice visual de la sesión (número) */
+.app-shell .session-list-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--deep-data-blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Índice cuando la sesión está activa */
+.app-shell .session-list-item.active .session-list-index {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* Etiqueta con el título de la sesión */
+.app-shell .session-list-label {
+  flex: 1 1 auto;
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* En hover/focus soltamos el wrap para ver títulos largos */
+.app-shell .session-list-item:focus .session-list-label,
+.app-shell .session-list-item:hover .session-list-label {
+  overflow: visible;
+  white-space: normal;
+}
+
+/* =========================================================
+   15. CONTENIDO DE SESIÓN (header, tabs y cuerpo)
+   ========================================================= */
+.app-shell .course-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Encabezado dentro de la sesión (pill + título) */
+.app-shell .session-detail-header {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Pill superior que indica parte/sesión */
+.app-shell .session-detail-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  background-color: rgba(47, 133, 90, 0.12);
+  color: var(--deep-forest);
+}
+
+/* Título principal de la sesión */
+.app-shell .session-detail-title {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+/* Contenedor principal de los contenidos de sesión, incl. pestañas */
+.app-shell .session-detail-body {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  box-shadow: 0 20px 40px rgba(27, 63, 107, 0.12);
+  overflow: hidden;
+}
+
+/* Adaptar wrappers de DataTables y navs a todo el ancho */
+.app-shell .session-detail-body .dataTables_wrapper,
+.app-shell .session-detail-body .tab-content,
+.app-shell .session-detail-body .bslib-navs-card,
+.app-shell .session-detail-body .card.bslib-navs-card {
+  width: 100%;
+}
+
+/* Scroll horizontal en tablas grandes */
+.app-shell .session-detail-body .dataTables_wrapper {
+  overflow-x: auto;
+}
+
+.app-shell .session-detail-body .dataTables_wrapper .dataTables_scroll {
+  margin-bottom: 1.5rem;
+}
+
+.app-shell .session-detail-body .dataTables_wrapper .dataTables_scrollBody {
+  border: none !important;
+}
+
+/* Quitamos estilos de card extra en navs */
+.app-shell .session-detail-body .bslib-navs-card,
+.app-shell .session-detail-body .card.bslib-navs-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.app-shell .session-detail-body .bslib-navs-card>.card-body {
+  padding: 0;
+}
+
+/* Contenedor de pestañas (.nav-tabs / .nav-pills) dentro de la sesión */
+.app-shell .session-detail-body .nav-tabs,
+.app-shell .session-detail-body .nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-bottom: none;
+  margin-bottom: 1.75rem;
+}
+
+/* Estilo de cada pestaña (nav-link) */
+.app-shell .session-detail-body .nav-tabs .nav-link,
+.app-shell .session-detail-body .nav-pills .nav-link {
+  flex: 0 0 auto;
+  min-width: 110px;
+  max-width: 180px;
+  /* compacto para que entren varias */
+  text-align: left;
+  border: none;
+  border-radius: 14px;
+  background-color: rgba(47, 133, 90, 0.12);
+  color: var(--deep-forest);
+  font-weight: 600;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* recorta el texto largo por defecto */
+}
+
+/* Cuando la pestaña está expandida (hover/activa) mostramos todo el título */
+.app-shell .session-detail-body .nav-tabs .nav-link.is-expanded,
+.app-shell .session-detail-body .nav-tabs .nav-link.active,
+.app-shell .session-detail-body .nav-pills .nav-link.is-expanded,
+.app-shell .session-detail-body .nav-pills .nav-link.active {
+  max-width: none;
+  white-space: normal;
+  overflow: visible;
+}
+
+/* Hover/focus sobre pestañas */
+.app-shell .session-detail-body .nav-tabs .nav-link:hover,
+.app-shell .session-detail-body .nav-tabs .nav-link:focus,
+.app-shell .session-detail-body .nav-pills .nav-link:hover,
+.app-shell .session-detail-body .nav-pills .nav-link:focus {
+  background-color: rgba(43, 108, 176, 0.15);
+  color: var(--deep-data-blue);
+}
+
+/* Estado activo de la pestaña */
+.app-shell .session-detail-body .nav-tabs .nav-link.active,
+.app-shell .session-detail-body .nav-pills .nav-link.active {
+  background-color: var(--agro-green);
+  color: #ffffff;
+  box-shadow: 0 16px 32px rgba(47, 133, 90, 0.24);
+}
+
+/* Contenido de cada tab-pane */
+.app-shell .session-detail-body .tab-content {
+  border: none;
+  padding: 0;
+}
+
+.app-shell .session-detail-body .tab-pane {
+  background: transparent;
+  padding: 0;
+}
+
+/* Estado vacío cuando una sección no tiene contenido */
+.app-shell .empty-state {
+  background: rgba(43, 108, 176, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--deep-data-blue);
+}
+
+
+/* =========================================================
+   16. RESPONSIVE / MEDIA QUERIES
+   ========================================================= */
+/* ----- Ajustes para <= 1200px ----- */
+@media (max-width: 1200px) {
+  .app-shell .course-sidebar {
+    position: static;
+    max-height: none;
+    box-shadow: 0 14px 30px rgba(27, 63, 107, 0.1);
+  }
+
+  .app-shell .course-layout {
+    margin-top: 2.5rem;
+  }
+}
+
+/* ----- Ajustes para >= 1200px (layout con sidebar más angosto) ----- */
+@media (min-width: 1200px) {
+
+  /* Sidebar ~24% y contenido ~76% */
+  .app-shell .course-layout .col-12.col-xl-4 {
+    flex: 0 0 24%;
+    max-width: 24%;
+  }
+
+  .app-shell .course-layout .col-12.col-xl-8 {
+    flex: 0 0 76%;
+    max-width: 76%;
+  }
+
+  .app-shell .course-sidebar {
+    padding: 1.5rem 1.15rem;
+  }
+}
+
+/* ----- Ajustes para <= 992px (nav móvil, tabs con scroll) ----- */
+@media (max-width: 992px) {
+
+  /* Mostrar botón hamburguesa */
+  .app-shell .nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Menú móvil desplegable */
+  .app-shell .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.97);
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(34, 84, 61, 0.18);
+    min-width: 220px;
+  }
+
+  /* Menú cuando está abierto */
+  .app-shell .nav-links.is-open {
+    display: flex;
+  }
+
+  .app-shell .nav-link {
+    width: 100%;
+  }
+
+  /* Reducir tamaño del título de hero */
+  .app-shell .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .app-shell .course-card-body {
+    padding: 2.25rem 1.75rem;
+  }
+
+  .app-shell .session-list-label {
+    font-size: 0.92rem;
+  }
+
+  /* En pantallas grandes pero < 992px: pestañas en una fila scrollable */
+  .app-shell .session-detail-body .nav-tabs,
+  .app-shell .session-detail-body .nav-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
+
+/* ----- Ajustes para <= 768px ----- */
+@media (max-width: 768px) {
+  .app-shell .primary-nav {
+    padding: 0.75rem 0;
+  }
+
+  .app-shell .skills-section .row {
+    padding: 1.5rem;
+  }
+
+  .app-shell .section {
+    padding: 3rem 0;
+  }
+}
+
+/* ----- Ajustes para <= 576px ----- */
+@media (max-width: 576px) {
+
+  /* Botones de hero en columna */
+  .app-shell .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .app-shell .project-card {
+    padding: 1.75rem;
+  }
+
+  .app-shell .course-card-body {
+    padding: 2rem 1.5rem;
+  }
+
+  .app-shell .course-card-title {
+    font-size: 1.3rem;
+  }
+
+  .app-shell .course-card-meta {
+    font-size: 0.9rem;
+  }
+
+  .app-shell .session-list-item {
+    padding: 0.55rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .app-shell .session-list-index {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .app-shell .session-list-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* ----- Ajustes para <= 420px ----- */
+@media (max-width: 420px) {
+  .app-shell .primary-nav .container {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .app-shell .nav-links {
+    right: 0;
+    width: 100%;
+  }
+
+  .app-shell .course-card-body {
+    padding: 1.75rem 1.35rem;
+  }
+
+  .app-shell .course-card-title {
+    font-size: 1.05rem;
+  }
+
+  .app-shell .session-list-item {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .app-shell .session-list-index {
+    width: 1.85rem;
+    height: 1.85rem;
+    font-size: 0.85rem;
+  }
+
+  .app-shell .session-list-label {
+    font-size: 0.85rem;
+  }
+
+  .app-shell .hero-title {
+    font-size: 2.1rem;
+  }
+}
+
+/* ----- Ajustes específicos del widget IA en pantallas pequeñas ----- */
+@media (max-width: 768px) {
+  .ia-map-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .ia-circle-sub {
+    width: 105px;
+    height: 105px;
+  }
+
+  .ia-circle-btn {
+    width: 100px;
+    height: 100px;
+    font-size: 0.72rem;
+  }
+}
+
+/* =========================================================
+   18. SESION 1: PESTAÑA 1 — QUE ES LA IA
+   ========================================================= */
+/* Contenedor del mapa de círculos IA */
+.ia-map-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  max-width: 100%;
+  margin: 0 auto 1rem auto;
+}
+
+.ia-circle-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px dashed var(--bs-primary, #0d6efd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  color: #1f2933;
+  background: radial-gradient(circle at 30% 30%, #f8fafc, #e5f2ff);
+}
+
+/* botón central */
+.ia-circle-btn-main {
+  border-radius: 999px;
+  white-space: pre-line;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.8rem;
+}
+
+/* Círculos internos */
+.ia-circle-sub {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo base de todos los círculos */
+.ia-circle-btn {
+  border-radius: 999px !important;
+  width: 110px;
+  height: 110px;
+  white-space: pre-line;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  padding: 0.4rem;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.18);
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out,
+    color 0.15s ease-out;
+}
+
+/* Hover visible */
+.ia-circle-btn:hover,
+.ia-circle-btn-main:hover {
+  cursor: pointer;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.28);
+}
+
+/* Estado seleccionado (se aplica desde JS) */
+.ia-circle-btn.ia-selected {
+  background-color: var(--bs-success, #16a34a) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(22, 163, 74, 0.45);
+}
+
+/* Posiciones relativas de cada subcírculo */
+.ia-circle-simbolica {
+  top: 4%;
+  left: 14%;
+}
+
+.ia-circle-ml {
+  top: 10%;
+  right: 4%;
+}
+
+.ia-circle-robotica {
+  bottom: -2%;
+  left: 4%;
+}
+
+.ia-circle-llm {
+  bottom: 12%;
+  right: 18%;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .ia-map-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .ia-circle-sub {
+    width: 105px;
+    height: 105px;
+  }
+
+  .ia-circle-btn {
+    width: 100px;
+    height: 100px;
+    font-size: 0.72rem;
+  }
+}
+
+/* LÍNEA HISTÓRICA IA (lista cronológica) */
+.timeline-wrapper {
+  position: relative;
+  padding-left: 30px;
+  /* Crea la línea vertical central */
+  border-left: 3px solid var(--bs-primary-bg-subtle, #cfe2ff);
+  margin-top: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Círculo en la línea */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  /* (30px padding-left) - (15px width / 2) - (3px border-left / 2) */
+  left: -38.5px;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--bs-primary, #0d6efd);
+  border: 3px solid var(--bs-primary-bg-subtle, #cfe2ff);
+  z-index: 1;
+}
+
+.timeline-year {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bs-primary, #0d6efd);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-content {
+  font-size: 0.92rem;
+}
+
+/* Destacar el último item (Hoy) */
+.timeline-item:last-child {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item:last-child::before {
+  background-color: var(--bs-success, #16a34a);
+  /* Verde para "Hoy" */
+}
+
+/* =========================================================
+   18. SESION 1: PESTAÑA 2 — LLM (jerarquía + flujo interno)
+   ========================================================= */
+
+/* Jerarquía IA → ML → DL → NLP → LLM */
+.llm-hierarchy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.llm-level {
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background-color: var(--bs-light, #f8fafc);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  color: #1f2933;
+}
+
+.llm-level-ia {
+  background-color: #edf2ff;
+}
+
+.llm-level-ml {
+  background-color: #e0fbfc;
+}
+
+.llm-level-dl {
+  background-color: #e6fffa;
+}
+
+.llm-level-nlp {
+  background-color: #fff7ed;
+}
+
+.llm-level-llm {
+  background-color: var(--bs-success, #16a34a);
+  color: #ffffff;
+}
+
+/* Flujo de etapas del LLM */
+.llm-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  margin: 0.75rem 0 1rem 0;
+}
+
+.llm-step-btn {
+  border-radius: 999px !important;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+  background-color: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out,
+    color 0.15s ease-out;
+}
+
+.llm-step-btn:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.25);
+}
+
+.llm-step-btn.llm-step-selected {
+  background-color: var(--bs-success, #16a34a) !important;
+  color: #ffffff !important;
+  border-color: rgba(22, 163, 74, 0.9) !important;
+}
+
+.llm-flow-arrow {
+  font-size: 0.9rem;
+  color: rgba(100, 116, 139, 0.9);
+}
+
+/* Bloque de detalle del paso */
+.llm-step-detail {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.llm-step-detail h5 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Versión monoespaciada de la tubería */
+.llm-flow-ascii {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Responsive: apilar botones en pantallas pequeñas */
+@media (max-width: 768px) {
+  .llm-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .llm-step-btn {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   19. SESION 1: PESTAÑA 3 — Alucinación LLM
+   ========================================================= */
+
+/* Lista base reutilizable */
+.hall-type-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.hall-type-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* Callout suave para riesgo / mensajes clave */
+.hall-risk-callout {
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  background-color: #fef9c3;
+  /* amarillo suave */
+  border: 1px solid rgba(202, 138, 4, 0.35);
+  color: #78350f;
+}
+
+/* Selector de benchmarks (TruthfulQA / Consistency / RAG) */
+.hall-bench-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0 0.8rem 0;
+}
+
+.hall-bench-btn {
+  border-radius: 999px !important;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.8rem;
+  border-width: 1px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+  background-color: #ffffff;
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out,
+    color 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+.hall-bench-btn:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.22);
+}
+
+/* Estado seleccionado, aplicado desde JS */
+.hall-bench-btn.hall-bench-selected {
+  background-color: var(--bs-success, #16a34a) !important;
+  color: #ffffff !important;
+  border-color: rgba(22, 163, 74, 0.9) !important;
+}
+
+/* Panel de detalle del benchmark */
+.hall-bench-detail {
+  border-radius: 0.6rem;
+  padding: 0.75rem 0.9rem;
+  background-color: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.48);
+  font-size: 0.9rem;
+}
+
+/* Responsive: apilar botones en pantallas pequeñas */
+@media (max-width: 768px) {
+  .hall-bench-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hall-bench-btn {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   19. SESION 1: PESTAÑA 4 — RAG / NotebookLM
+   ========================================================= */
+
+/* Columnas de comparación LLM vs RAG */
+.rag-col-compare {
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+/* Flujo de etapas RAG (NotebookLM) */
+.rag-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  margin: 0.9rem 0 1.1rem 0;
+}
+
+.rag-step-btn {
+  border-radius: 999px !important;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+  background-color: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out,
+    color 0.15s ease-out;
+}
+
+.rag-step-btn:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.25);
+}
+
+/* Estado seleccionado en el flujo RAG */
+.rag-step-btn.rag-step-selected {
+  background-color: var(--bs-success, #16a34a) !important;
+  color: #ffffff !important;
+  border-color: rgba(22, 163, 74, 0.9) !important;
+}
+
+.rag-flow-arrow {
+  font-size: 0.9rem;
+  color: rgba(100, 116, 139, 0.9);
+}
+
+/* Bloque de detalle del paso */
+.rag-step-detail {
+  font-size: 0.9rem;
+}
+
+.rag-step-detail h5 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Versión monoespaciada del pipeline RAG */
+.rag-flow-ascii {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  background-color: #020617;
+  color: #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.8rem;
+}
+
+/* Responsive: flujo vertical en pantallas pequeñas */
+@media (max-width: 768px) {
+  .rag-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rag-step-btn {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   19. SESION 1: PESTAÑA 5 — Flujo 4 pasos (Descubrir–Curar–Consultar–Idear)
+   ========================================================= */
+
+/* NAV / STEPPER DE LOS 4 PASOS */
+.rag-steps-nav .nav-tabs {
+  border-bottom: none;
+  margin-bottom: 0.75rem;
+}
+
+.rag-steps-nav .nav-link {
+  border-radius: 999px;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background-color: #f3f4f6;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.9rem;
+}
+
+.rag-steps-nav .nav-link .rag-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: var(--bs-primary, #0d6efd);
+  color: #ffffff;
+}
+
+.rag-steps-nav .nav-link.active {
+  background-color: var(--bs-success, #16a34a);
+  border-color: rgba(22, 163, 74, 0.9);
+  color: #ffffff;
+}
+
+.rag-steps-nav .nav-link.active .rag-step-number {
+  background-color: #ffffff;
+  color: var(--bs-success, #16a34a);
+}
+
+/* GENERADOR BOOLEANO: TEXTAREA DE PREVIEW */
+.kw-preview-wrapper textarea {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  border-radius: 0.5rem;
+  min-height: 3.2rem;
+}
+
+/* LISTA EN COLUMNA GUIA RAPIDA */
+.rag-discover-list li+li {
+  margin-top: 0.4rem;
+}
+
+/* Responsive: tabs verticales en pantallas pequeñas */
+@media (max-width: 768px) {
+  .rag-steps-nav .nav-tabs {
+    flex-wrap: wrap;
+  }
+
+  .rag-steps-nav .nav-link {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   20. SESION 1: PESTAÑA 6 — Catálogo herramientas IA
+   ========================================================= */
+
+.tool-catalog-intro {
+  font-size: 0.92rem;
+}
+
+/* Contenedor del select + tabla */
+.tool-catalog-controls .form-select {
+  max-width: 360px;
+}
+
+.tool-table-wrapper {
+  border-radius: 0.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.5rem;
+  background-color: #f9fafb;
+}
+
+/* Chips de categoría */
+.tool-cat {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* Colores por categoría principal */
+.tool-cat-descubrir {
+  background-color: #e0f2fe;
+  /* azul claro */
+  border-color: #60a5fa;
+}
+
+.tool-cat-consultar-con-citas {
+  background-color: #dcfce7;
+  /* verde claro */
+  border-color: #22c55e;
+}
+
+.tool-cat-gestion-bibliografica {
+  background-color: #fef3c7;
+  /* amarillo */
+  border-color: #f59e0b;
+}
+
+.tool-cat-screening {
+  background-color: #fee2e2;
+  /* rojo suave */
+  border-color: #ef4444;
+}
+
+/* Badge para el flujo 4 pasos */
+.tool-step-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+/* Ajustes DataTable (filtro superior y celdas) */
+.tool-table-wrapper .dataTables_filter {
+  margin-bottom: 0.25rem;
+}
+
+.tool-table-wrapper table.dataTable tbody td {
+  vertical-align: top;
+  font-size: 0.88rem;
+}
+
+/* =========================================================
+   20. SESIÓN 1: PESTAÑA 7 — PROMPT PERFECTO
+   ========================================================= */
+
+/* Lista de principios de prompt: un poco más compacta */
+.prompt-principles-list {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  padding-left: 1.1rem;
+}
+
+/* Chip / pastilla informativa bajo el contexto */
+.prompt-helper-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background-color: rgba(15, 23, 42, 0.03);
+  border: 1px dashed rgba(148, 163, 184, 0.8);
+}
+
+/* Vista previa del prompt: estilo tipo consola */
+.prompt-preview-wrapper textarea.form-control {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(15, 23, 42, 0.7);
+}
+
+/* Snippets de ejemplo del banco de prompts */
+.prompt-snippet {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  white-space: pre-wrap;
+  background: radial-gradient(circle at 0% 0%, #020617 0, #111827 40%, #020617 100%);
+  color: #e5e7eb;
+  border-radius: 0.7rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.5);
+}
+
+/* Responsive: que la vista previa sea cómoda en pantallas pequeñas */
+@media (max-width: 768px) {
+  .prompt-preview-wrapper textarea.form-control {
+    min-height: 220px;
+  }
+}
+
+/* =========================================================
+   21. UTILITIES / CLASES FALTANTES
+   ========================================================= */
+
+/* Bloques de código R en las sesiones (usado en pre.r-code) */
+.r-code {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #2d3748;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+/* Título principal de la sesión (usado en div.session-title) */
+.session-title {
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid rgba(47, 133, 90, 0.15);
+  padding-bottom: 0.75rem;
+}
+
+.session-title h3 {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  color: var(--deep-forest);
+  font-weight: 700;
+  margin: 0;
+}

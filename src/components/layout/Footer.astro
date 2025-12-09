@@ -1,0 +1,27 @@
+---
+import { siteData } from '../../data/siteData';
+
+const { hero } = siteData;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {currentYear} {hero.title}. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--agro-light);
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  .site-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    opacity: 0.8;
+  }
+</style>

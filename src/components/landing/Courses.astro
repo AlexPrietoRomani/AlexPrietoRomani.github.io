@@ -1,0 +1,44 @@
+---
+import { siteData } from '../../data/siteData';
+
+const { courses } = siteData;
+---
+
+<div id="courses" class="section courses-section">
+  <div class="container">
+    <h2 class="section-title">{courses.title}</h2>
+    <p class="section-intro">
+      {courses.intro}
+    </p>
+    
+    <!-- External Link Entry Button -->
+    <div class="d-flex justify-content-center mt-4">
+      <a 
+        href={courses.mainButton.href} 
+        class="btn btn-primary btn-lg"
+      >
+        <span style="margin-right: 0.5rem;">{courses.mainButton.icon}</span> {courses.mainButton.text}
+      </a>
+    </div>
+
+    <div class="course-grid">
+      {courses.cards.map(course => (
+        <a href={course.href} class="course-card" style={`--card-image: url('${course.image}'); text-decoration: none;`}>
+          <div class="course-card-overlay"></div>
+          <div class="course-card-body">
+            <span class="course-card-kicker">{course.kicker}</span>
+            <h3 class="course-card-title">{course.title}</h3>
+            <p class="course-card-meta">{course.meta}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .mt-4 { margin-top: 1.5rem; }
+  .d-flex { display: flex; }
+  .justify-content-center { justify-content: center; }
+  .btn-lg { padding: 1rem 2rem; font-size: 1.25rem; text-decoration: none; display: inline-flex; align-items: center; }
+</style>
