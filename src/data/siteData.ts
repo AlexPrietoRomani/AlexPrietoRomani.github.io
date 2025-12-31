@@ -10,10 +10,10 @@ export const siteData = {
             { icon: "💼", text: "Consultor y formador en analítica aplicada al agro" }
         ],
         cta: {
-            primary: { text: "Conecta en LinkedIn", href: "https://www.linkedin.com/in/alex-prieto-romani/" },
+            primary: { text: "Conecta en LinkedIn", href: "https://www.linkedin.com/incalex-prieto-romani/" },
             secondary: { text: "Explora mi GitHub", href: "https://github.com/AlexPrietoRomani" }
         },
-        image: "https://media.licdn.com/dms/image/v2/D4E03AQHe7d1z40IRvw/profile-displayphoto-shrink_800_800/B4EZdXkQIzHQAc-/0/1749520811003?e=1766016000&v=beta&t=55huZY-aTj78-q1f0IArMj4OtqL29xIBRG_pHxKjAe0"
+        image: "/images/profile/profile.jpg"
     },
     about: {
         cards: [
