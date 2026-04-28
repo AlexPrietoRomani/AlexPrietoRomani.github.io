@@ -54,7 +54,7 @@ export const siteData = {
     },
     skills: [
         {
-            category: { es: "Lenguajes", en: "Languages" },
+            category: { es: "Lenguajes Principales", en: "Core Languages" },
             items: [
                 { name: "Python", icon: "devicon-python-plain colored", level: 3 },
                 { name: "R", icon: "devicon-r-plain colored", level: 3 },
@@ -64,24 +64,34 @@ export const siteData = {
             ]
         },
         {
-            category: { es: "Ciencia de Datos & ML", en: "Data Science & ML" },
+            category: { es: "Ciencia de Datos", en: "Data Science" },
             items: [
                 { name: "Pandas", icon: "devicon-pandas-plain colored", level: 3 },
                 { name: "NumPy", icon: "devicon-numpy-plain colored", level: 3 },
                 { name: "Scikit-learn", icon: "devicon-scikitlearn-plain colored", level: 3 },
-                { name: "TensorFlow", icon: "devicon-tensorflow-original colored", level: 2 },
-                { name: "PyTorch", icon: "devicon-pytorch-original colored", level: 2 },
-                { name: "Tidyverse", image: "/images/skills/tidyverse.png", level: 3 }
+                { name: "Tidyverse", image: "/images/skills/tidyverse.png", level: 3 },
+                { name: "Análisis Estadístico", icon: "devicon-r-plain colored", level: 3 }
             ]
         },
         {
-            category: { es: "IA Generativa & Agentes", en: "Generative AI & Agents" },
+            category: { es: "IA Generativa & Agentes", en: "GenAI & Agents" },
             items: [
                 { name: "LangChain", icon: "devicon-python-plain", level: 2 },
                 { name: "LangGraph", icon: "devicon-python-plain", level: 2 },
-                { name: "Ollama", icon: "devicon-linux-plain", level: 2 },
-                { name: "ClaudeCode", icon: "devicon-google-plain", level: 2 },
-                { name: "OpenCode", icon: "devicon-github-original", level: 2 }
+                { name: "Ollama", image: "/images/skills/ollama.png", level: 2 },
+                { name: "Claude Code", image: "/images/skills/claude_code.png", level: 2 },
+                { name: "OpenCode", image: "/images/skills/opencode.png", level: 2 },
+                { name: "Stable Diffusion", icon: "devicon-python-plain", level: 2 }
+            ]
+        },
+        {
+            category: { es: "MLOps & Deep Learning", en: "MLOps & Deep Learning" },
+            items: [
+                { name: "TensorFlow", icon: "devicon-tensorflow-original colored", level: 2 },
+                { name: "PyTorch", icon: "devicon-pytorch-original colored", level: 2 },
+                { name: "MLflow", icon: "devicon-python-plain", level: 2 },
+                { name: "Apache Airflow", icon: "devicon-python-plain", level: 2 },
+                { name: "Docker", icon: "devicon-docker-plain colored", level: 2 }
             ]
         },
         {
@@ -89,8 +99,18 @@ export const siteData = {
             items: [
                 { name: "Streamlit", icon: "devicon-streamlit-plain colored", level: 3 },
                 { name: "Power BI", image: "/images/skills/powerbi.png", level: 3 },
-                { name: "Shiny", icon: "devicon-r-plain colored", level: 3 },
+                { name: "Shiny", image: "/images/skills/shiny_v2.png", level: 3 },
+                { name: "Tableau", icon: "devicon-python-plain", level: 2 },
                 { name: "Plotly", icon: "devicon-python-plain", level: 2 }
+            ]
+        },
+        {
+            category: { es: "Backend & Web", en: "Backend & Web" },
+            items: [
+                { name: "Java (Spring Boot)", icon: "devicon-java-plain colored", level: 2 },
+                { name: "JavaScript", icon: "devicon-javascript-plain colored", level: 2 },
+                { name: "HTML5/CSS3", icon: "devicon-html5-plain colored", level: 2 },
+                { name: "MongoDB", icon: "devicon-mongodb-plain colored", level: 2 }
             ]
         },
         {
@@ -101,10 +121,10 @@ export const siteData = {
             ]
         },
         {
-            category: { es: "Cloud Computing", en: "Cloud Computing" },
+            category: { es: "Infraestructura Cloud", en: "Cloud Infrastructure" },
             items: [
-                { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored", level: 1 },
-                { name: "GCP", icon: "devicon-googlecloud-plain colored", level: 1 }
+                { name: "GCP", icon: "devicon-googlecloud-plain colored", level: 2 },
+                { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored", level: 1 }
             ]
         }
     ],
