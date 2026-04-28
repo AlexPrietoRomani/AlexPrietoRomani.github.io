@@ -164,6 +164,8 @@ export const siteData = {
                 image: "/images/courses/disenos_estadisticos_v3.jpg",
                 href: "https://alex-prieto-00.shinyapps.io/Curso_disennos_experimentales/"
             }
+        ]
+    },
     experience: [
         {
             year: { es: "Julio 2025 - Presente", en: "July 2025 - Present" },
