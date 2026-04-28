@@ -35,7 +35,7 @@ const { courses } = siteData;
           </div>
         </div>
 
-        <a href={courses.mainButton.href} target="_blank" class="platform-cta">
+        <a href={courses.mainButton.href} target="_blank" class="platform-cta" id="platform-cta-link" aria-label={courses.mainButton.text[siteData.lang === 'en' ? 'en' : 'es']}>
           <span id="platform-cta-text">{courses.mainButton.text[siteData.lang === 'en' ? 'en' : 'es']}</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
         </a>
@@ -51,7 +51,7 @@ const { courses } = siteData;
 
     <div class="platform-courses-grid">
       {courses.cards.map((course, index) => (
-        <a href={course.href} target="_blank" class="course-mini-card">
+        <a href={course.href} target="_blank" class="course-mini-card" data-edu-card-link={index} aria-label={`${course.title[siteData.lang === 'en' ? 'en' : 'es']} - ${course.meta[siteData.lang === 'en' ? 'en' : 'es']}`}>
           <div class="course-mini-image" style={`background-image: url('${course.image}')`}></div>
           <div class="course-mini-info">
             <span class="course-mini-kicker" data-edu-card-kicker={index}>{course.kicker[siteData.lang === 'en' ? 'en' : 'es']}</span>
@@ -314,7 +314,10 @@ const { courses } = siteData;
     if (desc) desc.textContent = lang === 'en' 
       ? 'Access my specialized platform for statistical analysis and experimental design applied to agronomy. Interactive sessions, automated reports, and advanced analytics.' 
       : 'Accede a mi plataforma especializada en análisis estadístico y diseños experimentales aplicados al agro. Sesiones interactivas, reportes automatizados y analítica avanzada.';
-    if (cta) cta.textContent = siteData.courses.mainButton.text[lang];
+    if (cta) {
+      cta.textContent = siteData.courses.mainButton.text[lang];
+      document.getElementById('platform-cta-link')?.setAttribute('aria-label', siteData.courses.mainButton.text[lang]);
+    }
     
     if (f1) f1.textContent = lang === 'en' ? 'Statistical Analysis' : 'Análisis Estadístico';
     if (f2) f2.textContent = lang === 'en' ? 'AI Integration' : 'Integración con IA';
@@ -328,6 +331,10 @@ const { courses } = siteData;
     });
     document.querySelectorAll('[data-edu-card-meta]').forEach((el, i) => {
       el.textContent = siteData.courses.cards[i].meta[lang];
+    });
+    document.querySelectorAll('[data-edu-card-link]').forEach((el, i) => {
+      const card = siteData.courses.cards[i];
+      el.setAttribute('aria-label', `${card.title[lang]} - ${card.meta[lang]}`);
     });
   });
 </script>

@@ -21,7 +21,7 @@ const { hero } = siteData;
       <p class="bio" id="hero-bio">{hero.subtitle.es}</p>
       
       <div class="hero-actions">
-        <a href={hero.cta.resume.href} target="_blank" class="resume-btn" id="hero-resume-btn">
+        <a href={hero.cta.resume.href} target="_blank" class="resume-btn" id="hero-resume-btn" aria-label="Descargar Currículum Vitae de Alex Prieto Romani">
           {hero.cta.resume.text.es}
         </a>
       </div>
@@ -202,6 +202,9 @@ const { hero } = siteData;
 
     if (greeting) greeting.textContent = lang === 'es' ? 'Hola, soy' : "Hello, I'm";
     if (bio) bio.textContent = siteData.hero.subtitle[lang];
-    if (resumeBtn) resumeBtn.textContent = siteData.hero.cta.resume.text[lang];
+    if (resumeBtn) {
+      resumeBtn.textContent = siteData.hero.cta.resume.text[lang];
+      resumeBtn.setAttribute('aria-label', lang === 'es' ? 'Descargar Currículum Vitae de Alex Prieto Romani' : 'Download CV of Alex Prieto Romani');
+    }
   });
 </script>

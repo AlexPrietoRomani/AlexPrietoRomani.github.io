@@ -32,21 +32,27 @@ alex-prieto-landingpage/
 │   │   └── profile/            # Imagen de perfil
 │   └── favicon.svg
 ├── src/
-│   ├── components/             # Componentes reutilizables (.astro o .jsx)
+│   ├── components/             # Componentes reutilizables (.astro)
 │   │   ├── layout/
-│   │   │   ├── Navbar.astro
+│   │   │   ├── Navbar.astro    # Navegación con cambio de idioma
 │   │   │   └── Footer.astro
+│   │   ├── common/
+│   │   │   └── SensorNetwork.astro # Fondo animado (Canvas API)
 │   │   └── landing/            # Secciones de la landing page
-│   │       ├── Hero.astro      # (Usa siteData.ts)
-│   │       ├── About.astro     # (Usa siteData.ts)
-│   │       ├── Skills.astro    # (Iconos DevIcon vía siteData)
-│   │       ├── Courses.astro   # Enlace a ShinyApps
-│   │       ├── Projects.astro  # (Usa siteData.ts)
-│   │       └── Contact.astro   # (Usa siteData.ts)
+│   │       ├── Hero.astro      # Presentación y redes sociales
+│   │       ├── About.astro     # Biografía bilingüe
+│   │       ├── Experience.astro # Timeline de experiencia laboral
+│   │       ├── Education.astro  # Timeline de educación
+│   │       ├── TechStack.astro # Habilidades con niveles de dominio
+│   │       ├── Platform.astro  # Acceso premium a ShinyApps
+│   │       ├── Projects.astro  # Galería de proyectos con hover effects
+│   │       └── Contact.astro   # Formulario/datos de contacto
 │   ├── layouts/
 │   │   └── Layout.astro        # Layout principal (SEO, Meta, Fonts)
 │   ├── styles/
 │   │   └── global.css          # Estilos base y variables de diseño
+│   ├── stores/
+│   │   └── langStore.ts        # Gestión de estado del idioma (NanoStores)
 │   ├── data/
 │   │   └── siteData.ts         # Datos centralizados (Textos, Links, Iconos)
 │   └── pages/
@@ -58,16 +64,18 @@ alex-prieto-landingpage/
 
 ---
 
-## 3. Gestión de Contenido
+## 3. Gestión de Contenido y Multilenguaje
 
-Todo el contenido textual, enlaces e imágenes principales se gestionan desde **`src/data/siteData.ts`**. No es necesario editar los componentes HTML para realizar cambios de texto.
+Todo el contenido textual, enlaces e imágenes principales se gestionan desde **`src/data/siteData.ts`**. El sitio soporta **Español (ES)** e **Inglés (EN)** de forma dinámica mediante NanoStores.
 
 ### Estructura de `siteData.ts`:
 *   **`hero`**: Títulos, subtítulos, imagen de perfil y enlaces sociales.
 *   **`about`**: Biografía bilingüe y focos profesionales.
-*   **`skills`**: Tecnologías categorizadas. Soporta clases de Devicon (`icon`) o rutas locales (`image`).
-*   **`projects`**: Lista de proyectos con etiquetas y links.
-*   **`courses`**: Información de cursos y tarjetas de acceso.
+*   **`experience`**: Timeline laboral detallado.
+*   **`education`**: Timeline académico detallado.
+*   **`skills`**: Tecnologías categorizadas con niveles de dominio (1-3).
+*   **`projects`**: Lista de proyectos con imágenes, etiquetas y links.
+*   **`courses`**: Información de cursos integrados en la sección de Plataforma.
 *   **`cv`**: Ruta y textos para la descarga del currículum.
 
 ---

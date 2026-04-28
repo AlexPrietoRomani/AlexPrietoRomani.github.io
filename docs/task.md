@@ -97,11 +97,11 @@ Este documento desglosa las tareas necesarias para implementar el rediseño insp
 ## Fase 5: Interactividad y Pulido Final
 
 ### Tarea 5.1: Auditoría de Accesibilidad y SEO
-- [ ] Revisar etiquetas `alt`, contrastes y navegación por teclado.
-- [ ] Optimizar metadatos `Open Graph` para compartir en redes.
-- [ ] **Test**: Ejecutar Lighthouse o similar y alcanzar >90 en todas las métricas.
+- [x] Revisar etiquetas `alt`, contrastes y navegación por teclado.
+- [x] Optimizar metadatos `Open Graph` para compartir en redes.
+- [x] **Test**: Ejecutar Lighthouse o similar y alcanzar >90 en todas las métricas.
 
 ### Tarea 5.2: Despliegue y Validación Final
-- [ ] Realizar un `npm run build` para asegurar que no hay errores de compilación.
-- [ ] Validar el funcionamiento del sistema bilingüe en producción.
-- [ ] **Test**: Navegación completa del sitio sin errores en consola. (GitHub Pages).
+- [x] Realizar un `npm run build` para asegurar que no hay errores de compilación.
+- [x] Validar el funcionamiento del sistema bilingüe en producción.
+- [x] **Test**: Navegación completa del sitio sin errores en consola. (GitHub Pages).

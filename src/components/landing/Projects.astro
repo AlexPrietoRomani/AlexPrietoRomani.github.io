@@ -183,7 +183,12 @@ const { projects } = siteData;
       el.textContent = siteData.projects[i].description[lang];
     });
     document.querySelectorAll('.project-link').forEach((el, i) => {
-      el.textContent = lang === 'es' ? 'Ver en GitHub' : 'View on GitHub';
+      const linkText = lang === 'es' ? 'Ver en GitHub' : 'View on GitHub';
+      const projectName = siteData.projects[i].name[lang];
+      // Preservar el SVG
+      const svg = el.querySelector('svg')?.outerHTML || '';
+      el.innerHTML = `${linkText} ${svg}`;
+      el.setAttribute('aria-label', `${linkText} proyecto ${projectName}`);
     });
   });
 </script>
