@@ -59,7 +59,7 @@ export const siteData = {
                 { name: "Python", icon: "devicon-python-plain colored", level: 3 },
                 { name: "R", icon: "devicon-r-plain colored", level: 3 },
                 { name: "SQL", icon: "devicon-mysql-plain colored", level: 2 },
-                { name: "Astro", icon: "devicon-astro-plain colored", level: 2 },
+                { name: "Astro", icon: "devicon-astro-plain colored", level: 1 },
                 { name: "Rust", icon: "devicon-rust-plain colored", level: 1 }
             ]
         },
@@ -76,12 +76,12 @@ export const siteData = {
         {
             category: { es: "IA Generativa & Agentes", en: "GenAI & Agents" },
             items: [
-                { name: "LangChain", icon: "devicon-python-plain", level: 2 },
-                { name: "LangGraph", icon: "devicon-python-plain", level: 2 },
+                { name: "LangChain", image: "/images/skills/langchain.png", level: 2 },
+                { name: "LangGraph", image: "/images/skills/langgraph.png", level: 2 },
                 { name: "Ollama", image: "/images/skills/ollama.png", level: 2 },
                 { name: "Claude Code", image: "/images/skills/claude_code.png", level: 2 },
                 { name: "OpenCode", image: "/images/skills/opencode.png", level: 2 },
-                { name: "Stable Diffusion", icon: "devicon-python-plain", level: 2 }
+                { name: "Stable Diffusion", image: "/images/skills/stable_diffusion.png", level: 2 }
             ]
         },
         {
@@ -98,9 +98,9 @@ export const siteData = {
             category: { es: "Visualización & Apps", en: "Visualization & Apps" },
             items: [
                 { name: "Streamlit", icon: "devicon-streamlit-plain colored", level: 3 },
-                { name: "Power BI", image: "/images/skills/powerbi.png", level: 3 },
+                { name: "Power BI", image: "/images/skills/powerbi.png", level: 2 },
                 { name: "Shiny", image: "/images/skills/shiny_v2.png", level: 3 },
-                { name: "Tableau", icon: "devicon-python-plain", level: 1 },
+                { name: "Tableau", image: "/images/skills/tableau.png", level: 1 },
                 { name: "Plotly", image: "/images/skills/plotly.png", level: 3 }
             ]
         },
@@ -123,7 +123,7 @@ export const siteData = {
         {
             category: { es: "Infraestructura Cloud", en: "Cloud Infrastructure" },
             items: [
-                { name: "GCP", icon: "devicon-googlecloud-plain colored", level: 2 },
+                { name: "GCP", icon: "devicon-googlecloud-plain colored", level: 1 },
                 { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored", level: 1 }
             ]
         }
