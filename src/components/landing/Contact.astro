@@ -19,16 +19,31 @@ const { contact } = siteData;
       <div class="contact-methods">
         <div class="contact-card">
           <div class="method">
-            <span class="method-label" data-key="email">{siteData.lang === 'en' ? 'Email' : 'Correo'}</span>
-            <a href={`mailto:${contact.email}`} class="method-link">{contact.email}</a>
+            <div class="method-icon">
+              <i class="devicon-google-plain"></i>
+            </div>
+            <div class="method-details">
+              <span class="method-label" data-key="email">{siteData.lang === 'en' ? 'Email' : 'Correo'}</span>
+              <a href={`mailto:${contact.email}`} class="method-link">{contact.email}</a>
+            </div>
           </div>
           <div class="method">
-            <span class="method-label" data-key="linkedin">LinkedIn</span>
-            <a href={contact.linkedinUrl} target="_blank" class="method-link">{contact.linkedin}</a>
+            <div class="method-icon">
+              <i class="devicon-linkedin-plain"></i>
+            </div>
+            <div class="method-details">
+              <span class="method-label" data-key="linkedin">LinkedIn</span>
+              <a href={contact.linkedinUrl} target="_blank" class="method-link">alex-prieto-romani</a>
+            </div>
           </div>
           <div class="method">
-            <span class="method-label" data-key="github">GitHub</span>
-            <a href={contact.githubUrl} target="_blank" class="method-link">{contact.github}</a>
+            <div class="method-icon">
+              <i class="devicon-github-original"></i>
+            </div>
+            <div class="method-details">
+              <span class="method-label" data-key="github">GitHub</span>
+              <a href={contact.githubUrl} target="_blank" class="method-link">AlexPrietoRomani</a>
+            </div>
           </div>
         </div>
       </div>
@@ -39,8 +54,8 @@ const { contact } = siteData;
 <style>
   .contact-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
     align-items: center;
   }
 
@@ -49,10 +64,12 @@ const { contact } = siteData;
   }
 
   .contact-intro {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #1a202c !important;
+    opacity: 0.9;
+    line-height: 1.7;
+    margin-top: 1.5rem;
+    max-width: 500px;
   }
 
   .contact-methods {
@@ -60,36 +77,63 @@ const { contact } = siteData;
   }
 
   .contact-card {
-    background: var(--bg-surface);
-    border-radius: 24px;
-    padding: 2.5rem;
-    border: 1px solid var(--border-main);
+    background: rgba(13, 25, 21, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 32px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    gap: 2.5rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
   }
 
   .method {
     display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .method-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--agro-accent);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .method:hover .method-icon {
+    background: var(--agro-accent);
+    color: #ffffff;
+    transform: scale(1.1);
+  }
+
+  .method-details {
+    display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
 
   .method-label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     font-weight: 700;
     color: var(--agro-accent);
   }
 
   .method-link {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-main);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: all 0.2s;
     word-break: break-all;
   }
 
@@ -100,13 +144,20 @@ const { contact } = siteData;
   @media (max-width: 768px) {
     .contact-wrapper {
       text-align: center;
-      gap: 2rem;
+      gap: 3rem;
     }
     .contact-info {
       text-align: center;
     }
+    .contact-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .method {
+      text-align: left;
+    }
     .contact-card {
-      padding: 1.5rem;
+      padding: 2rem;
     }
   }
 </style>
