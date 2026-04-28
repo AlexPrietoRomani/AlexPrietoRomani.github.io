@@ -22,21 +22,33 @@ export const siteData = {
     about: {
         title: { es: "Sobre Mí", en: "About Me" },
         content: {
-            es: "Soy Ingeniero Agrónomo y estudiante de Big Data & Data Science. Aplico ciencia de datos y modelos de IA para optimizar la agricultura de precisión, automatizar análisis y potenciar decisiones estratégicas en el agro.",
-            en: "I am an Agricultural Engineer and a Big Data & Data Science student. I apply data science and AI models to optimize precision agriculture, automate analysis, and empower strategic decisions in the agricultural sector."
+            es: "Soy Ingeniero Agrónomo y Agriculture Data Scientist con maestría en Big Data & Data Science. Me especializo en la Agricultura 4.0, aplicando modelos avanzados de Deep Learning, Computer Vision e IA Generativa para optimizar la toma de decisiones en el campo, automatizar el control de calidad y potenciar la productividad agrícola global.",
+            en: "I am an Agricultural Engineer and Agriculture Data Scientist with a Master's in Big Data & Data Science. I specialize in Agriculture 4.0, applying advanced Deep Learning, Computer Vision, and Generative AI models to optimize field decision-making, automate quality control, and boost global agricultural productivity."
         },
         focus: [
             { 
-                title: { es: "🌱 Agricultura de precisión:", en: "🌱 Precision Agriculture:" }, 
-                description: { es: " monitorización satelital, GIS y análisis multivariante para cultivos.", en: " satellite monitoring, GIS, and multivariate analysis for crops." } 
+                title: { es: "Agricultura de Precisión", en: "Precision Agriculture" }, 
+                description: { 
+                    es: "Monitorización satelital (NDVI), integración meteorológica y uso de Deep Learning para el conteo automatizado de plantas.", 
+                    en: "Satellite monitoring (NDVI), meteorological integration, and Deep Learning for automated plant counting." 
+                },
+                icon: "🛰️"
             },
             { 
-                title: { es: "🤖 Modelos predictivos:", en: "🤖 Predictive Models:" }, 
-                description: { es: " estimación de rendimiento, detección de plagas y pronóstico climático.", en: " yield estimation, pest detection, and climate forecasting." } 
+                title: { es: "Modelos Predictivos & Vision", en: "Predictive Models & Vision" }, 
+                description: { 
+                    es: "Detección de enfermedades, conteo de fruta y estimación de rendimientos mediante Machine Learning y Visión Artificial.", 
+                    en: "Disease detection, fruit counting, and yield estimation through Machine Learning and Computer Vision." 
+                },
+                icon: "👁️"
             },
             { 
-                title: { es: "📊 Storytelling con datos:", en: "📊 Data Storytelling:" }, 
-                description: { es: " dashboards en Power BI y Streamlit, junto con entrenamiento especializado.", en: " dashboards in Power BI and Streamlit, along with specialized training." } 
+                title: { es: "IA Generativa & LLMs", en: "Generative AI & LLMs" }, 
+                description: { 
+                    es: "Implementación de sistemas RAG, herramientas de soporte técnico y reportería inteligente impulsada por IA para el agro.", 
+                    en: "Implementation of RAG systems, technical support tools, and AI-powered smart reporting for agriculture." 
+                },
+                icon: "🤖"
             }
         ]
     },

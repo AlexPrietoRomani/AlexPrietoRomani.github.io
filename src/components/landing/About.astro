@@ -6,74 +6,146 @@ const { about } = siteData;
 
 <section id="about" class="section about-section" data-section>
   <div class="container">
-    <h2 class="section-title" id="about-title">{about.title.es}</h2>
-    
-    <div class="bio-content">
-      <p class="bio-text" id="about-content">{about.content.es}</p>
+    <div class="about-header animate-fade-in">
+      <h2 class="section-title" id="about-title">{about.title.es}</h2>
+      <div class="bio-card">
+        <p class="bio-text" id="about-content">{about.content.es}</p>
+      </div>
     </div>
     
-    <h3 class="section-subtitle" id="focus-title">{siteData.lang === 'en' ? 'Current Focus' : 'Focos actuales'}</h3>
-    <ul class="focus-list">
-      {about.focus.map((item, index) => (
-        <li key={index}>
-          <strong class="focus-item-title" data-index={index}>{item.title.es}</strong>
-          <span class="focus-item-desc" data-index={index}>{item.description.es}</span>
-        </li>
-      ))}
-    </ul>
+    <div class="focus-container animate-fade-in delay-200">
+      <h3 class="focus-header" id="focus-title">{siteData.lang === 'en' ? 'Current Focus' : 'Focos actuales'}</h3>
+      <div class="focus-grid">
+        {about.focus.map((item, index) => (
+          <div class="focus-card">
+            <div class="focus-icon-box">
+              <span class="focus-emoji">{item.icon}</span>
+            </div>
+            <div class="focus-info">
+              <h4 class="focus-card-title" data-focus-title-index={index}>{item.title.es}</h4>
+              <p class="focus-card-desc" data-focus-desc-index={index}>{item.description.es}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  .bio-content {
-    background: var(--bg-surface);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 1px solid var(--border-main);
-    margin-bottom: 2rem;
+  .about-section {
+    padding: 8rem 0;
+    position: relative;
+  }
+
+  .about-header {
+    margin-bottom: 5rem;
+    max-width: 900px;
+  }
+
+  .bio-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    padding: 3rem;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--agro-accent);
   }
 
   .bio-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1.25rem;
+    line-height: 1.8;
     color: var(--text-main);
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .focus-header {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .focus-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 2.5rem;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .focus-card:hover {
+    transform: translateY(-10px);
+    background: rgba(16, 185, 129, 0.03);
+    border-color: var(--agro-accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .focus-icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .focus-card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--agro-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .focus-card-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
     margin: 0;
   }
 
-  .focus-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    .focus-list {
-      grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+    .about-header {
+      margin-bottom: 3rem;
     }
-    .bio-content {
-      padding: 1.5rem;
+    .bio-card {
+      padding: 2rem;
     }
-  }
-
-  .focus-list li {
-    background: var(--bg-surface);
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid var(--border-main);
-    transition: transform 0.3s ease;
-  }
-
-  .focus-list li:hover {
-    transform: translateY(-5px);
-    border-color: var(--agro-accent);
-  }
-
-  .focus-item-title {
-    color: var(--agro-accent);
-    display: block;
-    margin-bottom: 0.5rem;
+    .bio-text {
+      font-size: 1.1rem;
+    }
+    .focus-card {
+      padding: 2rem;
+    }
   }
 </style>
 
@@ -90,11 +162,10 @@ const { about } = siteData;
     if (content) content.textContent = siteData.about.content[lang];
     if (focusTitle) focusTitle.textContent = lang === 'es' ? 'Focos actuales' : 'Current Focus';
 
-    // Update focus items
-    document.querySelectorAll('.focus-item-title').forEach((el, i) => {
+    document.querySelectorAll('[data-focus-title-index]').forEach((el, i) => {
       el.textContent = siteData.about.focus[i].title[lang];
     });
-    document.querySelectorAll('.focus-item-desc').forEach((el, i) => {
+    document.querySelectorAll('[data-focus-desc-index]').forEach((el, i) => {
       el.textContent = siteData.about.focus[i].description[lang];
     });
   });
