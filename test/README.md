@@ -12,6 +12,13 @@ Este directorio contiene las guías y scripts para asegurar que cada fase del re
 ### Fase 2: Hero y Animación
 - [ ] **Fondo**: Se renderiza una red de sensores (nodos y líneas conectivas) interactiva o animada suavemente a 60fps. No interfiere con clics y se ajusta al hacer resize.
 - [ ] **Avatar**: La imagen de perfil tiene un anillo verde brillante.
+- [ ] **Network Graph**: Los nodos se conectan dinámicamente y reaccionan al movimiento.
+
+### Fase 3: Línea de Tiempo Profesional
+- [ ] **Estructura**: Se muestran al menos 5 hitos (trabajos y educación).
+- [ ] **Scroll Reveal**: Los nodos y tarjetas se iluminan y aparecen suavemente al hacer scroll hacia abajo.
+- [ ] **Alternancia**: Las tarjetas se alternan izquierda/derecha en escritorio y se apilan en móvil.
+- [ ] **i18n**: Los cargos, empresas y descripciones cambian de idioma correctamente.
 
 ## Pruebas de Humo (Scripts)
 

@@ -54,23 +54,23 @@ Este documento desglosa las tareas necesarias para implementar el rediseño insp
 
 ---
 
-## Fase 3: Sección de Carrera (Career Timeline)
+## Fase 3: Sección de Carrera (Career Timeline) [COMPLETADA]
 
 ### Tarea 3.1: Extracción de Datos del CV
-- [ ] Analizar el PDF `public/docs/Alex_Prieto_Romani_CV.pdf`.
-- [ ] Estructurar la cronología profesional (fechas, cargos, logros principales).
-- [ ] **Test**: Verificar que los datos extraídos coincidan con el PDF original.
+- [x] Analizar el PDF `public/docs/Alex_Prieto_Romani_CV.pdf`.
+- [x] Estructurar la cronología profesional (fechas, cargos, logros principales).
+- [x] **Test**: Verificar que los datos extraídos coincidan con el PDF original.
 
 ### Tarea 3.2: Componente de Línea de Tiempo
-- [ ] Desarrollar `src/components/landing/Experience.astro`.
-- [ ] Implementar diseño de línea de tiempo vertical (estilo template).
-- [ ] Asegurar que sea bilingüe (ES/EN).
-- [ ] **Test**: Validar que el orden cronológico sea correcto y los textos cambien de idioma.
+- [x] Desarrollar `src/components/landing/Experience.astro`.
+- [x] Implementar diseño de línea de tiempo vertical (estilo template).
+- [x] Asegurar que sea bilingüe (ES/EN).
+- [x] **Test**: Validar que el orden cronológico sea correcto y los textos cambien de idioma.
 
 ### Tarea 3.3: Creación del Componente Timeline
-- [ ] Crear `src/components/landing/Career.astro` (o equivalente en React).
-- [ ] Implementar la línea vertical central con nodos iluminados al hacer scroll.
-- [ ] Renderizar tarjetas alternadas o apiladas para cada experiencia/estudio siguiendo la estética del template original (bordes sutiles, hover de luz).
+- [x] Integrar `Experience.astro` en la página principal.
+- [x] Implementar la línea vertical central con nodos iluminados al hacer scroll.
+- [x] Renderizar tarjetas alternadas para cada experiencia/estudio siguiendo la estética del template.
 
 ---
 

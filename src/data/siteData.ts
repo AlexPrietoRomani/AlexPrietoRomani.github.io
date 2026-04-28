@@ -165,5 +165,57 @@ export const siteData = {
                 href: "https://alex-prieto-00.shinyapps.io/Curso_disennos_experimentales/"
             }
         ]
-    }
+    },
+    career: [
+        {
+            year: "2024 - Present",
+            title: { es: "Data Science I+D", en: "R&D Data Science" },
+            company: { es: "CAMPOSOL S.A.", en: "CAMPOSOL S.A." },
+            description: { 
+                es: "Desarrollo de modelos predictivos y soluciones de analítica avanzada para optimización de procesos agrícolas e investigación.",
+                en: "Development of predictive models and advanced analytics solutions for agricultural process optimization and research."
+            },
+            type: "work"
+        },
+        {
+            year: "2024 - Present",
+            title: { es: "Maestría en Big Data y Data Science", en: "Master's in Big Data and Data Science" },
+            company: { es: "Universidad Internacional de Valencia (VIU)", en: "International University of Valencia (VIU)" },
+            description: { 
+                es: "Enfoque en procesamiento de grandes volúmenes de datos, arquitecturas cloud y aprendizaje automático avanzado.",
+                en: "Focus on large-scale data processing, cloud architectures, and advanced machine learning."
+            },
+            type: "education"
+        },
+        {
+            year: "2024",
+            title: { es: "Especialización en ML Engineering", en: "ML Engineering Specialization" },
+            company: { es: "DMC Perú", en: "DMC Perú" },
+            description: { 
+                es: "Profundización en despliegue de modelos, MLOps y escalabilidad de sistemas de inteligencia artificial.",
+                en: "Deep dive into model deployment, MLOps, and artificial intelligence systems scalability."
+            },
+            type: "education"
+        },
+        {
+            year: "2023 - 2024",
+            title: { es: "Investigador de Mejoramiento Genético", en: "Genetic Improvement Researcher" },
+            company: { es: "CAMPOSOL S.A.", en: "CAMPOSOL S.A." },
+            description: { 
+                es: "Aplicación de estadística y bioinformática para la selección y mejora de variedades vegetales comerciales.",
+                en: "Application of statistics and bioinformatics for the selection and improvement of commercial plant varieties."
+            },
+            type: "work"
+        },
+        {
+            year: "2015 - 2020",
+            title: { es: "Bachiller en Ciencias - Agronomía", en: "Bachelor of Science - Agronomy" },
+            company: { es: "Universidad Nacional Agraria La Molina (UNALM)", en: "National Agrarian University La Molina (UNALM)" },
+            description: { 
+                es: "Formación sólida en ciencias agrarias, gestión de recursos naturales y producción vegetal sostenible.",
+                en: "Solid background in agricultural sciences, natural resource management, and sustainable plant production."
+            },
+            type: "education"
+        }
+    ]
 };

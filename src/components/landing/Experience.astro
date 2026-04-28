@@ -1,0 +1,256 @@
+---
+import { siteData } from '../../data/siteData';
+const { career } = siteData;
+---
+
+<section id="career" class="section career-section" data-section>
+  <div class="container">
+    <h2 class="section-title" id="career-title">{siteData.lang === 'en' ? 'Professional Journey' : 'Trayectoria Profesional'}</h2>
+    
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      
+      {career.map((item, index) => (
+        <div class={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+          <div class="timeline-dot">
+            <div class="dot-inner"></div>
+          </div>
+          
+          <div class="timeline-content">
+            <span class="year">{item.year}</span>
+            <h3 class="role" data-index={index}>{item.title.es}</h3>
+            <h4 class="company" data-index={index}>{item.company.es}</h4>
+            <p class="description" data-index={index}>{item.description.es}</p>
+            <div class={`type-badge ${item.type}`}>
+               {item.type === 'work' ? '💼' : '🎓'}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .career-section {
+    position: relative;
+    padding: 6rem 0;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    padding: 2rem 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+      transparent, 
+      var(--agro-accent) 15%, 
+      var(--agro-accent) 85%, 
+      transparent
+    );
+    opacity: 0.3;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+  }
+
+  .timeline-item.right {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--bg-main);
+    border: 2px solid var(--border-main);
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+
+  .timeline-item.active .timeline-dot {
+    border-color: var(--agro-accent);
+    box-shadow: 0 0 15px var(--agro-accent);
+  }
+
+  .dot-inner {
+    width: 8px;
+    height: 8px;
+    background: var(--border-main);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+  }
+
+  .timeline-item.active .dot-inner {
+    background: var(--agro-accent);
+    box-shadow: 0 0 10px var(--agro-accent);
+  }
+
+  .timeline-content {
+    position: relative;
+    width: 85%;
+    padding: 2rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-main);
+    border-radius: 24px;
+    transition: all 0.3s ease;
+    margin: 0 2rem;
+    opacity: 0.5;
+    transform: translateY(20px);
+  }
+
+  .timeline-item.active .timeline-content {
+    opacity: 1;
+    transform: translateY(0);
+    border-color: var(--agro-accent);
+  }
+
+  .timeline-item.left .timeline-content {
+    text-align: right;
+  }
+
+  .timeline-item:hover .timeline-content {
+    border-color: var(--agro-accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .year {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--agro-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .role {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+  }
+
+  .company {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .type-badge {
+    position: absolute;
+    top: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .timeline-item.left .type-badge {
+    left: 1.5rem;
+  }
+
+  .timeline-item.right .type-badge {
+    right: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-line {
+      left: 30px;
+    }
+
+    .timeline-item {
+      padding-left: 70px;
+      padding-right: 0;
+      justify-content: flex-start;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-item.right {
+      padding-left: 70px;
+    }
+
+    .timeline-dot {
+      left: 30px;
+    }
+
+    .timeline-content {
+      width: 100%;
+      margin: 0;
+      text-align: left !important;
+    }
+
+    .timeline-item.left .type-badge,
+    .timeline-item.right .type-badge {
+      right: 1.5rem;
+      left: auto;
+    }
+  }
+</style>
+
+<script>
+  import { $lang } from '../../stores/langStore';
+  import { siteData } from '../../data/siteData';
+
+  $lang.subscribe(lang => {
+    const title = document.getElementById('career-title');
+    if (title) title.textContent = lang === 'es' ? 'Trayectoria Profesional' : 'Professional Journey';
+
+    document.querySelectorAll('.role').forEach((el, i) => {
+      const idx = el.getAttribute('data-index');
+      if (idx !== null) el.textContent = siteData.career[parseInt(idx)].title[lang];
+    });
+
+    document.querySelectorAll('.company').forEach((el, i) => {
+      const idx = el.getAttribute('data-index');
+      if (idx !== null) el.textContent = siteData.career[parseInt(idx)].company[lang];
+    });
+
+    document.querySelectorAll('.description').forEach((el, i) => {
+      const idx = el.getAttribute('data-index');
+      if (idx !== null) el.textContent = siteData.career[parseInt(idx)].description[lang];
+    });
+  });
+
+  // Scroll illumination logic
+  const observerOptions = {
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.timeline-item').forEach(item => {
+    observer.observe(item);
+  });
+</script>
