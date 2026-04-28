@@ -43,13 +43,14 @@ Este documento desglosa las tareas necesarias para implementar el rediseño insp
 - [x] Colocar los iconos de redes sociales.
 - [x] **Test**: Validar centrado en móviles y escritorio.
 
-### Tarea 2.2: Efecto de Fondo "Lluvia de Códigos Agrícola"
-- [x] Desarrollar un componente de fondo (`AgroBackground.astro`).
-- [x] Crear animación que simule caída de hojas/símbolos.
-  - **Iconos utilizados**: 🌱, 💧, 🌿, 🧬, 📊, 🛰️, 🌾, 🚜, 📈.
-  - **Velocidad**: 1px por frame (aprox. 60px/s) para una caída suave y orgánica.
-- [x] Asegurar que la animación no afecte el rendimiento.
-- [x] **Test**: Verificar que el canvas ocupe todo el fondo y no interfiera con los clics en los elementos del sitio.
+### Tarea 2.2: Efecto de Fondo "Red de Sensores Agrícolas" (Network Graph)
+- [x] Desarrollar un componente de fondo (`SensorNetwork.astro`).
+- [x] Crear animación con Canvas y Vanilla JS simulando nodos conectados.
+  - **Partículas**: Nodos con movimiento lento simulando flotación orgánica.
+  - **Líneas**: Conexiones dinámicas basadas en la proximidad de los nodos, con opacidad variable.
+  - **Estilo**: Puntos con colores temáticos (`#10b981`, `#34d399`) y opacidad suave.
+- [x] Implementar optimización limitando nodos según el ancho de pantalla.
+- [x] **Test**: Verificar rendimiento a 60fps, responsividad al hacer resize, y que no interfiera con clics.
 
 ---
 

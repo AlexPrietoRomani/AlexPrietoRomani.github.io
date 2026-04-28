@@ -10,7 +10,7 @@ Este directorio contiene las guías y scripts para asegurar que cada fase del re
 - [ ] **i18n**: Al hacer clic en "EN", todos los textos de la página cambian a inglés instantáneamente. Al volver a "ES", regresan a español.
 
 ### Fase 2: Hero y Animación
-- [ ] **Fondo**: Se ven símbolos (🌱, 💧, etc.) cayendo suavemente. No hay lag al hacer scroll.
+- [ ] **Fondo**: Se renderiza una red de sensores (nodos y líneas conectivas) interactiva o animada suavemente a 60fps. No interfiere con clics y se ajusta al hacer resize.
 - [ ] **Avatar**: La imagen de perfil tiene un anillo verde brillante.
 
 ## Pruebas de Humo (Scripts)

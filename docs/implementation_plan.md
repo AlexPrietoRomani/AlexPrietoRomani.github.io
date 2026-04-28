@@ -15,7 +15,7 @@ Recrear la interfaz de usuario (UI) moderna y fluida del repositorio de referenc
 
 ### 2. Animaciones y Efectos
 - **Fondo animado**: El template original tiene una "lluvia de código" o partículas espaciales.
-- **Adaptación Agronómica**: Reemplazar las partículas por un efecto más orgánico o agrícola (por ejemplo, iconos sutiles de hojas cayendo, lluvia simulada, partículas verdes o conexiones tipo red neuronal agrícola).
+- **Adaptación Agronómica**: Reemplazar las partículas por un efecto de "Red de Sensores Agrícolas" (Network Graph). Un sistema de nodos conectados simulando sensores y puntos de datos, usando Vanilla JS en un Canvas.
 
 ### 3. Internacionalización (i18n)
 - **Bilingüe Automático**: Implementar un toggle de idioma (Español/Inglés) o manejo de estado para traducir la UI al instante, asegurando que todas las secciones soporten ambos idiomas.
