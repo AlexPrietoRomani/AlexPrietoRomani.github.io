@@ -70,7 +70,7 @@ Edita el archivo **`src/data/siteData.ts`**.
 
 ## 📄 Estructura de Archivos
 
-Para más detalles sobre la arquitectura técnica, consulta [landing_page_documentation.md](./landing_page_documentation.md) y [structure.md](./structure.md).
+Para más detalles sobre la arquitectura técnica y cómo correr el proyecto, consulta [documentation.md](./docs/documentation.md) y [execution.md](./docs/execution.md).
 
 ---
 © 2025 Alex Prieto Romani
