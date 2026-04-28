@@ -1,0 +1,333 @@
+---
+import { siteData } from '../../data/siteData';
+const { courses } = siteData;
+---
+
+<section id="platform" class="section platform-section" data-section>
+  <div class="container">
+    <div class="platform-glass-card">
+      <div class="platform-content">
+        <div class="platform-badge">
+          <span class="badge-icon">🎓</span>
+          <span id="platform-kicker">{siteData.lang === 'en' ? 'Learning Platform' : 'Plataforma de Estudios'}</span>
+        </div>
+        
+        <h2 class="platform-title" id="platform-title">
+          {siteData.lang === 'en' ? 'Master Experimental Designs with AI' : 'Domina Diseños Experimentales con IA'}
+        </h2>
+        
+        <p class="platform-description" id="platform-description">
+          {siteData.lang === 'en' ? 'Access my specialized platform for statistical analysis and experimental design applied to agronomy. Interactive sessions, automated reports, and advanced analytics.' : 'Accede a mi plataforma especializada en análisis estadístico y diseños experimentales aplicados al agro. Sesiones interactivas, reportes automatizados y analítica avanzada.'}
+        </p>
+
+        <div class="platform-features">
+          <div class="feature-item">
+            <span class="feature-icon">📊</span>
+            <span class="feature-text" id="feat-1">{siteData.lang === 'en' ? 'Statistical Analysis' : 'Análisis Estadístico'}</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🤖</span>
+            <span class="feature-text" id="feat-2">{siteData.lang === 'en' ? 'AI Integration' : 'Integración con IA'}</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📱</span>
+            <span class="feature-text" id="feat-3">{siteData.lang === 'en' ? 'Interactive Dashboards' : 'Dashboards Interactivos'}</span>
+          </div>
+        </div>
+
+        <a href={courses.mainButton.href} target="_blank" class="platform-cta">
+          <span id="platform-cta-text">{courses.mainButton.text[siteData.lang === 'en' ? 'en' : 'es']}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+
+      <div class="platform-visual">
+        <div class="visual-glow"></div>
+        <div class="mockup-container">
+           <img src="/images/courses/disenos_estadisticos_v2.jpg" alt="Platform Preview" class="mockup-img" />
+        </div>
+      </div>
+    </div>
+
+    <div class="platform-courses-grid">
+      {courses.cards.map((course, index) => (
+        <a href={course.href} target="_blank" class="course-mini-card">
+          <div class="course-mini-image" style={`background-image: url('${course.image}')`}></div>
+          <div class="course-mini-info">
+            <span class="course-mini-kicker" data-edu-card-kicker={index}>{course.kicker[siteData.lang === 'en' ? 'en' : 'es']}</span>
+            <h3 class="course-mini-title" data-edu-card-title={index}>{course.title[siteData.lang === 'en' ? 'en' : 'es']}</h3>
+            <p class="course-mini-meta" data-edu-card-meta={index}>{course.meta[siteData.lang === 'en' ? 'en' : 'es']}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .platform-section {
+    padding: 8rem 0;
+  }
+
+  .platform-glass-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 40px;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+    margin-bottom: 4rem;
+  }
+/* ... rest of existing styles ... */
+  .platform-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .course-mini-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 1.25rem;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .course-mini-card:hover {
+    background: rgba(16, 185, 129, 0.05);
+    border-color: var(--agro-accent);
+    transform: translateX(10px);
+  }
+
+  .course-mini-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  }
+
+  .course-mini-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .course-mini-kicker {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--agro-accent);
+    text-transform: uppercase;
+  }
+
+  .course-mini-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .course-mini-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .badge-icon {
+    font-size: 1.1rem;
+  }
+
+  #platform-kicker {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--agro-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .platform-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-main);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .platform-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+  }
+
+  .platform-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .feature-icon {
+    font-size: 1.5rem;
+  }
+
+  .feature-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .platform-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--agro-accent);
+    color: var(--bg-main);
+    padding: 1.25rem 2.5rem;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+  }
+
+  .platform-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
+    filter: brightness(1.1);
+  }
+
+  .platform-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .visual-glow {
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  .mockup-container {
+    position: relative;
+    z-index: 1;
+    transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .platform-glass-card:hover .mockup-container {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  }
+
+  .mockup-img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media (max-width: 1024px) {
+    .platform-glass-card {
+      grid-template-columns: 1fr;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    .platform-description {
+      max-width: 100%;
+    }
+
+    .platform-features {
+      justify-content: center;
+    }
+
+    .platform-visual {
+      margin-top: 2rem;
+    }
+
+    .mockup-container {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .platform-title {
+      font-size: 2.25rem;
+    }
+    
+    .platform-features {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
+
+<script>
+  import { $lang } from '../../stores/langStore';
+  import { siteData } from '../../data/siteData';
+
+  $lang.subscribe(lang => {
+    const kicker = document.getElementById('platform-kicker');
+    const title = document.getElementById('platform-title');
+    const desc = document.getElementById('platform-description');
+    const cta = document.getElementById('platform-cta-text');
+    const f1 = document.getElementById('feat-1');
+    const f2 = document.getElementById('feat-2');
+    const f3 = document.getElementById('feat-3');
+
+    if (kicker) kicker.textContent = lang === 'en' ? 'Learning Platform' : 'Plataforma de Estudios';
+    if (title) title.textContent = lang === 'en' ? 'Master Experimental Designs with AI' : 'Domina Diseños Experimentales con IA';
+    if (desc) desc.textContent = lang === 'en' 
+      ? 'Access my specialized platform for statistical analysis and experimental design applied to agronomy. Interactive sessions, automated reports, and advanced analytics.' 
+      : 'Accede a mi plataforma especializada en análisis estadístico y diseños experimentales aplicados al agro. Sesiones interactivas, reportes automatizados y analítica avanzada.';
+    if (cta) cta.textContent = siteData.courses.mainButton.text[lang];
+    
+    if (f1) f1.textContent = lang === 'en' ? 'Statistical Analysis' : 'Análisis Estadístico';
+    if (f2) f2.textContent = lang === 'en' ? 'AI Integration' : 'Integración con IA';
+    if (f3) f3.textContent = lang === 'en' ? 'Interactive Dashboards' : 'Dashboards Interactivos';
+
+    document.querySelectorAll('[data-edu-card-kicker]').forEach((el, i) => {
+      el.textContent = siteData.courses.cards[i].kicker[lang];
+    });
+    document.querySelectorAll('[data-edu-card-title]').forEach((el, i) => {
+      el.textContent = siteData.courses.cards[i].title[lang];
+    });
+    document.querySelectorAll('[data-edu-card-meta]').forEach((el, i) => {
+      el.textContent = siteData.courses.cards[i].meta[lang];
+    });
+  });
+</script>

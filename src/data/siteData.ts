@@ -44,43 +44,43 @@ export const siteData = {
         {
             category: { es: "Lenguajes", en: "Languages" },
             items: [
-                { name: "Python", icon: "devicon-python-plain colored" },
-                { name: "R", icon: "devicon-r-plain colored" },
-                { name: "Java", icon: "devicon-java-plain colored" },
-                { name: "SQL", icon: "devicon-mysql-plain colored" },
-                { name: "MongoDB", icon: "devicon-mongodb-plain colored" }
+                { name: "Python", icon: "devicon-python-plain colored", level: 3 },
+                { name: "R", icon: "devicon-r-plain colored", level: 3 },
+                { name: "Java", icon: "devicon-java-plain colored", level: 1 },
+                { name: "SQL", icon: "devicon-mysql-plain colored", level: 2 },
+                { name: "MongoDB", icon: "devicon-mongodb-plain colored", level: 1 }
             ]
         },
         {
             category: { es: "Ciencia de datos", en: "Data Science" },
             items: [
-                { name: "Pandas", icon: "devicon-pandas-plain colored" },
-                { name: "NumPy", icon: "devicon-numpy-plain colored" },
-                { name: "Scikit-learn", icon: "devicon-scikitlearn-plain colored" },
-                { name: "TensorFlow", icon: "devicon-tensorflow-original colored" },
-                { name: "PyTorch", icon: "devicon-pytorch-original colored" },
-                { name: "Tidyverse", image: "/images/skills/tidyverse.png" }
+                { name: "Pandas", icon: "devicon-pandas-plain colored", level: 3 },
+                { name: "NumPy", icon: "devicon-numpy-plain colored", level: 3 },
+                { name: "Scikit-learn", icon: "devicon-scikitlearn-plain colored", level: 3 },
+                { name: "TensorFlow", icon: "devicon-tensorflow-original colored", level: 2 },
+                { name: "PyTorch", icon: "devicon-pytorch-original colored", level: 2 },
+                { name: "Tidyverse", image: "/images/skills/tidyverse.png", level: 3 }
             ]
         },
         {
             category: { es: "Visualización y Apps", en: "Visualization & Apps" },
             items: [
-                { name: "Matplotlib", icon: "devicon-matplotlib-plain colored" },
-                { name: "Seaborn", icon: "devicon-python-plain" },
-                { name: "Plotly", icon: "devicon-python-plain" },
-                { name: "Streamlit", icon: "devicon-streamlit-plain colored" },
-                { name: "Power BI", image: "/images/skills/powerbi.png" },
-                { name: "Shiny", icon: "devicon-r-plain colored" }
+                { name: "Matplotlib", icon: "devicon-matplotlib-plain colored", level: 3 },
+                { name: "Seaborn", icon: "devicon-python-plain", level: 3 },
+                { name: "Plotly", icon: "devicon-python-plain", level: 2 },
+                { name: "Streamlit", icon: "devicon-streamlit-plain colored", level: 3 },
+                { name: "Power BI", image: "/images/skills/powerbi.png", level: 3 },
+                { name: "Shiny", icon: "devicon-r-plain colored", level: 3 }
             ]
         },
         {
             category: { es: "GIS & Cloud", en: "GIS & Cloud" },
             items: [
-                { name: "QGIS", image: "/images/skills/qgis.png" },
-                { name: "ArcGIS Pro", image: "/images/skills/arcgis.png" },
-                { name: "Google Earth Engine", image: "/images/skills/gee.png" },
-                { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored" },
-                { name: "GCP", icon: "devicon-googlecloud-plain colored" }
+                { name: "QGIS", image: "/images/skills/qgis.png", level: 2 },
+                { name: "ArcGIS Pro", image: "/images/skills/arcgis.png", level: 2 },
+                { name: "Google Earth Engine", image: "/images/skills/gee.png", level: 2 },
+                { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored", level: 1 },
+                { name: "GCP", icon: "devicon-googlecloud-plain colored", level: 1 }
             ]
         }
     ],
@@ -92,6 +92,7 @@ export const siteData = {
                 en: "Shiny application to forecast wind speed and direction using time series models and interactive visualizations."
             },
             link: "https://github.com/AlexPrietoRomani/app_viento",
+            image: "/images/projects/wind.png",
             tags: ["Series de tiempo", "Pronóstico", "Shiny"]
         },
         {
@@ -101,6 +102,7 @@ export const siteData = {
                 en: "Training and deployment of a fine-tuned YOLO model to recognize diseases in coffee leaves from labeled images."
             },
             link: "https://github.com/AlexPrietoRomani/detection-diseases-coffee",
+            image: "/images/projects/coffee.png",
             tags: ["Visión computacional", "YOLO", "Agtech"]
         },
         {
@@ -110,6 +112,7 @@ export const siteData = {
                 en: "Streamlit suite to generate images with local diffusion models and classify results using pre-trained models."
             },
             link: "https://github.com/AlexPrietoRomani/Generacion-Clasificacion-Imagenes-Streamlit",
+            image: "/images/projects/generation.png",
             tags: ["IA Generativa", "Clasificación", "Streamlit"]
         },
         {
@@ -119,6 +122,7 @@ export const siteData = {
                 en: "Predictive modeling for the DengAI competition, estimating dengue incidence by combining climate and historical series."
             },
             link: "https://github.com/AlexPrietoRomani/DengAI-Predicting-Disease-Spread",
+            image: "/images/projects/dengue.png",
             tags: ["Competencia", "Modelado", "Salud pública"]
         }
     ],

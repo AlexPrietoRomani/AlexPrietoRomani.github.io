@@ -14,6 +14,10 @@ const { projects } = siteData;
     <div class="projects-grid">
       {projects.map((project, index) => (
         <article class="project-card">
+          <div class="project-image-container">
+            <img src={project.image} alt={project.name.es} class="project-image" />
+            <div class="project-overlay"></div>
+          </div>
           <div class="project-card-inner">
             <h3 class="project-title" data-index={index}>{project.name.es}</h3>
             <p class="project-description" data-index={index}>{project.description.es}</p>
@@ -24,6 +28,7 @@ const { projects } = siteData;
             </div>
             <a href={project.link} target="_blank" class="project-link" data-index={index}>
               {siteData.lang === 'en' ? 'View on GitHub' : 'Ver en GitHub'}
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
             </a>
           </div>
         </article>
@@ -33,24 +38,56 @@ const { projects } = siteData;
 </section>
 
 <style>
+  .projects-section {
+    padding: 6rem 0;
+  }
+
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
   }
 
   .project-card {
     background: var(--bg-surface);
-    border-radius: 24px;
+    border-radius: 28px;
     border: 1px solid var(--border-main);
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px);
     border-color: var(--agro-accent);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 20px rgba(16, 185, 129, 0.1);
+  }
+
+  .project-image-container {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card:hover .project-image {
+    transform: scale(1.1);
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, var(--bg-surface));
+    pointer-events: none;
   }
 
   .project-card-inner {
@@ -58,20 +95,23 @@ const { projects } = siteData;
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap: 1rem;
+    gap: 1.2rem;
+    flex-grow: 1;
+    z-index: 1;
   }
 
   .project-title {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 800;
     color: var(--text-main);
     margin: 0;
+    letter-spacing: -0.02em;
   }
 
   .project-description {
     color: var(--text-muted);
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.7;
     flex-grow: 1;
     margin: 0;
   }
@@ -80,32 +120,47 @@ const { projects } = siteData;
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-top: 0.5rem;
   }
 
   .tag {
     font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.3rem 0.8rem;
-    background: rgba(72, 187, 120, 0.1);
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    background: rgba(16, 185, 129, 0.08);
     color: var(--agro-accent);
-    border-radius: 999px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover .tag {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--agro-accent);
   }
 
   .project-link {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--agro-accent);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    transition: color 0.2s;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .project-link svg {
+    color: var(--agro-accent);
+    transition: transform 0.3s ease;
   }
 
   .project-link:hover {
-    color: var(--text-inverse);
+    color: var(--agro-accent);
+  }
+
+  .project-link:hover svg {
+    transform: translate(2px, -2px);
   }
 </style>
 

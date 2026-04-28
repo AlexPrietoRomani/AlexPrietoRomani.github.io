@@ -78,19 +78,19 @@ Este documento desglosa las tareas necesarias para implementar el rediseño insp
 ## Fase 4: Refactorización de Secciones Existentes
 
 ### Tarea 4.1: Optimización de Imágenes de Proyectos
-- [ ] Sustituir capturas actuales por imágenes de alta calidad o mocks generados.
-- [ ] Implementar `hover effects` avanzados en las tarjetas de proyectos.
-- [ ] **Test**: Verificar carga optimizada de imágenes.
+- [x] Sustituir capturas actuales por imágenes de alta calidad o mocks generados.
+- [x] Implementar `hover effects` avanzados en las tarjetas de proyectos.
+- [x] **Test**: Verificar carga optimizada de imágenes.
 
 ### Tarea 4.2: Integración de la Plataforma de Estudios
-- [ ] Crear sección específica para el acceso a la plataforma.
-- [ ] Usar iconos de "Education" y "Access".
-- [ ] **Test**: Validar que el enlace a la plataforma funcione correctamente. (GitHub, Web).
+- [x] Crear sección específica para el acceso a la plataforma.
+- [x] Usar iconos de "Education" y "Access".
+- [x] **Test**: Validar que el enlace a la plataforma funcione correctamente. (GitHub, Web).
 
 ### Tarea 4.3: Sección Tech Stack
-- [ ] Actualizar `src/components/landing/Skills.astro` a `TechStack.astro`.
-- [ ] Agrupar habilidades por dominio (Frontend, Data Science, GIS, etc.) replicando las secciones horizontales del template.
-- [ ] Implementar indicador de nivel de dominio (Beginner, Proficient, Expert) mediante "estrellas" o "barras", como en el diseño de referencia.
+- [x] Actualizar `src/components/landing/Skills.astro` a `TechStack.astro`.
+- [x] Agrupar habilidades por dominio (Frontend, Data Science, GIS, etc.) replicando las secciones horizontales del template.
+- [x] Implementar indicador de nivel de dominio (Beginner, Proficient, Expert) mediante "estrellas" o "barras", como en el diseño de referencia.
 
 ---
 

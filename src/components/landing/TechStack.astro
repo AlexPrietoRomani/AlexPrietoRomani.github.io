@@ -1,0 +1,158 @@
+---
+import { siteData } from '../../data/siteData';
+const { skills } = siteData;
+---
+
+<section id="tech-stack" class="section tech-stack-section" data-section>
+  <div class="container">
+    <h2 class="section-title" id="tech-title">{siteData.lang === 'en' ? 'Technical Stack' : 'Stack Tecnológico'}</h2>
+    <p class="section-intro" id="tech-intro">
+      {siteData.lang === 'en' ? 'Core technologies and tools I use to solve complex agricultural problems through data.' : 'Tecnologías y herramientas clave que utilizo para resolver problemas agrícolas complejos mediante datos.'}
+    </p>
+
+    <div class="tech-grid">
+      {skills.map((group, groupIndex) => (
+        <div class="tech-group">
+          <h3 class="group-title" data-group-index={groupIndex}>{group.category[siteData.lang === 'en' ? 'en' : 'es']}</h3>
+          <div class="tech-items">
+            {group.items.map((skill) => (
+              <div class="tech-item">
+                <div class="tech-info">
+                  {skill.icon ? (
+                    <i class={`${skill.icon} tech-icon`}></i>
+                  ) : (
+                    <img src={skill.image} alt={skill.name} class="tech-image-icon" />
+                  )}
+                  <span class="tech-name">{skill.name}</span>
+                </div>
+                <div class="tech-level">
+                  {[1, 2, 3].map((star) => (
+                    <div class={`star ${star <= skill.level ? 'filled' : ''}`}></div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-stack-section {
+    padding: 6rem 0;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .tech-group {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-main);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .tech-group:hover {
+    border-color: var(--agro-accent);
+    background: rgba(16, 185, 129, 0.02);
+  }
+
+  .group-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--agro-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.75rem;
+  }
+
+  .tech-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tech-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tech-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .tech-icon {
+    font-size: 1.5rem;
+    width: 24px;
+    text-align: center;
+  }
+
+  .tech-image-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  .tech-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .tech-level {
+    display: flex;
+    gap: 4px;
+  }
+
+  .star {
+    width: 12px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .star.filled {
+    background: var(--agro-accent);
+    box-shadow: 0 0 8px var(--agro-accent);
+  }
+
+  @media (max-width: 768px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  import { $lang } from '../../stores/langStore';
+  import { siteData } from '../../data/siteData';
+
+  $lang.subscribe(lang => {
+    const title = document.getElementById('tech-title');
+    const intro = document.getElementById('tech-intro');
+    if (title) title.textContent = lang === 'es' ? 'Stack Tecnológico' : 'Technical Stack';
+    if (intro) intro.textContent = lang === 'es' 
+      ? 'Tecnologías y herramientas clave que utilizo para resolver problemas agrícolas complejos mediante datos.' 
+      : 'Core technologies and tools I use to solve complex agricultural problems through data.';
+
+    document.querySelectorAll('.group-title').forEach((el, i) => {
+      const idx = el.getAttribute('data-group-index');
+      if (idx !== null) {
+         el.textContent = siteData.skills[parseInt(idx)].category[lang];
+      }
+    });
+  });
+</script>
