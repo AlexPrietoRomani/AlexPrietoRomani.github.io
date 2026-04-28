@@ -26,27 +26,27 @@ export const siteData = {
             en: "I am an Agricultural Engineer and Agriculture Data Scientist with a Master's in Big Data & Data Science. I specialize in Agriculture 4.0, applying advanced Deep Learning, Computer Vision, and Generative AI models to optimize field decision-making, automate quality control, and boost global agricultural productivity."
         },
         focus: [
-            { 
-                title: { es: "Agricultura de Precisión", en: "Precision Agriculture" }, 
-                description: { 
-                    es: "Monitorización satelital (NDVI), integración meteorológica y uso de Deep Learning para el conteo automatizado de plantas.", 
-                    en: "Satellite monitoring (NDVI), meteorological integration, and Deep Learning for automated plant counting." 
+            {
+                title: { es: "Agricultura de Precisión", en: "Precision Agriculture" },
+                description: {
+                    es: "Monitorización satelital (NDVI), integración meteorológica y uso de Deep Learning para el conteo automatizado de plantas.",
+                    en: "Satellite monitoring (NDVI), meteorological integration, and Deep Learning for automated plant counting."
                 },
                 icon: "🛰️"
             },
-            { 
-                title: { es: "Modelos Predictivos & Vision", en: "Predictive Models & Vision" }, 
-                description: { 
-                    es: "Detección de enfermedades, conteo de fruta y estimación de rendimientos mediante Machine Learning y Visión Artificial.", 
-                    en: "Disease detection, fruit counting, and yield estimation through Machine Learning and Computer Vision." 
+            {
+                title: { es: "Modelos Predictivos & Vision", en: "Predictive Models & Vision" },
+                description: {
+                    es: "Detección de enfermedades, conteo de fruta y estimación de rendimientos mediante Machine Learning y Visión Artificial.",
+                    en: "Disease detection, fruit counting, and yield estimation through Machine Learning and Computer Vision."
                 },
                 icon: "👁️"
             },
-            { 
-                title: { es: "IA Generativa & LLMs", en: "Generative AI & LLMs" }, 
-                description: { 
-                    es: "Implementación de sistemas RAG, herramientas de soporte técnico y reportería inteligente impulsada por IA para el agro.", 
-                    en: "Implementation of RAG systems, technical support tools, and AI-powered smart reporting for agriculture." 
+            {
+                title: { es: "IA Generativa & LLMs", en: "Generative AI & LLMs" },
+                description: {
+                    es: "Implementación de sistemas RAG, herramientas de soporte técnico y reportería inteligente impulsada por IA para el agro.",
+                    en: "Implementation of RAG systems, technical support tools, and AI-powered smart reporting for agriculture."
                 },
                 icon: "🤖"
             }
@@ -58,13 +58,13 @@ export const siteData = {
             items: [
                 { name: "Python", icon: "devicon-python-plain colored", level: 3 },
                 { name: "R", icon: "devicon-r-plain colored", level: 3 },
-                { name: "Java", icon: "devicon-java-plain colored", level: 1 },
                 { name: "SQL", icon: "devicon-mysql-plain colored", level: 2 },
-                { name: "MongoDB", icon: "devicon-mongodb-plain colored", level: 1 }
+                { name: "Astro", icon: "devicon-astro-plain colored", level: 2 },
+                { name: "Rust", icon: "devicon-rust-plain colored", level: 1 }
             ]
         },
         {
-            category: { es: "Ciencia de datos", en: "Data Science" },
+            category: { es: "Ciencia de Datos & ML", en: "Data Science & ML" },
             items: [
                 { name: "Pandas", icon: "devicon-pandas-plain colored", level: 3 },
                 { name: "NumPy", icon: "devicon-numpy-plain colored", level: 3 },
@@ -75,22 +75,34 @@ export const siteData = {
             ]
         },
         {
-            category: { es: "Visualización y Apps", en: "Visualization & Apps" },
+            category: { es: "IA Generativa & Agentes", en: "Generative AI & Agents" },
             items: [
-                { name: "Matplotlib", icon: "devicon-matplotlib-plain colored", level: 3 },
-                { name: "Seaborn", icon: "devicon-python-plain", level: 3 },
-                { name: "Plotly", icon: "devicon-python-plain", level: 2 },
-                { name: "Streamlit", icon: "devicon-streamlit-plain colored", level: 3 },
-                { name: "Power BI", image: "/images/skills/powerbi.png", level: 3 },
-                { name: "Shiny", icon: "devicon-r-plain colored", level: 3 }
+                { name: "LangChain", icon: "devicon-python-plain", level: 2 },
+                { name: "LangGraph", icon: "devicon-python-plain", level: 2 },
+                { name: "Ollama", icon: "devicon-linux-plain", level: 2 },
+                { name: "ClaudeCode", icon: "devicon-google-plain", level: 2 },
+                { name: "OpenCode", icon: "devicon-github-original", level: 2 }
             ]
         },
         {
-            category: { es: "GIS & Cloud", en: "GIS & Cloud" },
+            category: { es: "Visualización & Apps", en: "Visualization & Apps" },
+            items: [
+                { name: "Streamlit", icon: "devicon-streamlit-plain colored", level: 3 },
+                { name: "Power BI", image: "/images/skills/powerbi.png", level: 3 },
+                { name: "Shiny", icon: "devicon-r-plain colored", level: 3 },
+                { name: "Plotly", icon: "devicon-python-plain", level: 2 }
+            ]
+        },
+        {
+            category: { es: "Geotecnología (GIS)", en: "Geotechnology (GIS)" },
             items: [
                 { name: "QGIS", image: "/images/skills/qgis.png", level: 2 },
-                { name: "ArcGIS Pro", image: "/images/skills/arcgis.png", level: 2 },
-                { name: "Google Earth Engine", image: "/images/skills/gee.png", level: 2 },
+                { name: "Google Earth Engine", image: "/images/skills/gee.png", level: 2 }
+            ]
+        },
+        {
+            category: { es: "Cloud Computing", en: "Cloud Computing" },
+            items: [
                 { name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark colored", level: 1 },
                 { name: "GCP", icon: "devicon-googlecloud-plain colored", level: 1 }
             ]
@@ -99,7 +111,7 @@ export const siteData = {
     projects: [
         {
             name: { es: "Predicción de viento con series temporales", en: "Wind Prediction with Time Series" },
-            description: { 
+            description: {
                 es: "Aplicación Shiny para pronosticar velocidad y dirección del viento usando modelos de series temporales y visualizaciones interactivas.",
                 en: "Shiny application to forecast wind speed and direction using time series models and interactive visualizations."
             },
@@ -149,7 +161,7 @@ export const siteData = {
         path: "/docs/Alex_Prieto_Romani_CV.pdf",
         buttonText: { es: "Descargar CV", en: "Download CV" },
         title: { es: "Descarga mi CV", en: "Download my CV" },
-        subtitle: { 
+        subtitle: {
             es: "Obtén una copia actualizada de mi experiencia profesional y logros.",
             en: "Get an updated copy of my professional experience and achievements."
         }
@@ -187,7 +199,7 @@ export const siteData = {
             year: { es: "Julio 2025 - Presente", en: "July 2025 - Present" },
             title: { es: "Agriculture Data Science", en: "Agriculture Data Science" },
             company: { es: "Hortifrut S.A. – La Libertad, Perú", en: "Hortifrut S.A. – La Libertad, Peru" },
-            description: { 
+            description: {
                 es: "Diseño y ejecución de modelos estadísticos y algoritmos de analítica avanzada para transformar datos agronómicos en información accionable. Desarrollo de indicadores agronómicos y soporte analítico en planificación agrícola, fertirriego y gestión operativa. Colaboración en el modelo de idoneidad agrometeorológica para establecimiento y manejo de genética. Análisis de biometría, fenología y estimación de fruta para optimizar decisiones. Integración de herramientas digitales y LLMs para reportes automatizados.",
                 en: "Design and execution of statistical models and advanced analytics algorithms to transform agronomic data into actionable insights. Development of agronomic indicators and analytical support in agricultural planning, fertigation, and operational management. Collaboration in the agrometeorological suitability model. Analysis of biometry, phenology, and fruit estimation. Integration of digital tools and LLMs for automated reports."
             }
@@ -196,7 +208,7 @@ export const siteData = {
             year: { es: "Sep. 2024 – Junio 2025", en: "Sep. 2024 – June 2025" },
             title: { es: "Data Science I+D", en: "R&D Data Science" },
             company: { es: "CAMPOSOL S.A. – La Libertad, Perú", en: "CAMPOSOL S.A. – La Libertad, Peru" },
-            description: { 
+            description: {
                 es: "Desarrollo e implementación de modelos predictivos supervisados (Regresión, Random Forest, XGBoost) y no supervisados (clustering) para identificar insights y optimizar decisiones estratégicas. Creación y mantenimiento de dashboards interactivos en Power BI y Shiny. Ejecución de procesos ETL con Python y SQL. Participación activa en experimentación estadística (test de hipótesis, ANOVA).",
                 en: "Development and implementation of supervised predictive models (Regression, Random Forest, XGBoost) and unsupervised (clustering) to identify insights and optimize strategic decisions. Creation and maintenance of interactive dashboards in Power BI and Shiny. Execution of ETL processes with Python and SQL. Active participation in statistical experimentation (hypothesis testing, ANOVA)."
             }
@@ -205,7 +217,7 @@ export const siteData = {
             year: { es: "Ago. 2023 – Ago. 2024", en: "Aug. 2023 – Aug. 2024" },
             title: { es: "Investigador de Mejoramiento Genético", en: "Genetic Improvement Researcher" },
             company: { es: "CAMPOSOL S.A. – La Libertad, Perú", en: "CAMPOSOL S.A. – La Libertad, Peru" },
-            description: { 
+            description: {
                 es: "Automatización del flujo de trabajo ETL mediante scripts de Python para garantizar la integridad y consistencia de datos. Implementación y mantenimiento de dashboards de Power BI para monitoreo y visualización eficiente de resultados comerciales y operativos. Realización de análisis estadísticos avanzados para identificación de insights y optimización de recursos en proyectos específicos.",
                 en: "Automation of ETL workflow through Python scripts to ensure data integrity and consistency. Implementation and maintenance of Power BI dashboards for efficient monitoring and visualization of commercial and operational results. Execution of advanced statistical analysis to identify insights and optimize resources in specific projects."
             }
@@ -216,7 +228,7 @@ export const siteData = {
             year: { es: "Enero de 2024 - Abril de 2025", en: "January 2024 - April 2025" },
             title: { es: "Máster Universitario en Big Data y Ciencia de Datos", en: "Master's in Big Data and Data Science" },
             company: { es: "VIU - Universidad Internacional de Valencia", en: "VIU - International University of Valencia" },
-            description: { 
+            description: {
                 es: "Enfoque en procesamiento de grandes volúmenes de datos (Data Processing), arquitecturas cloud y aprendizaje automático avanzado.",
                 en: "Focus on large-scale data processing, cloud architectures, and advanced machine learning."
             }
@@ -225,7 +237,7 @@ export const siteData = {
             year: { es: "2024", en: "2024" },
             title: { es: "Especialización en Machine Learning Engineering", en: "ML Engineering Specialization" },
             company: { es: "DMC Perú", en: "DMC Perú" },
-            description: { 
+            description: {
                 es: "Profundización en despliegue de modelos, MLOps y escalabilidad de sistemas de inteligencia artificial.",
                 en: "Deep dive into model deployment, MLOps, and artificial intelligence systems scalability."
             }
@@ -234,7 +246,7 @@ export const siteData = {
             year: { es: "Enero de 2015 - Diciembre de 2020", en: "January 2015 - December 2020" },
             title: { es: "Ingeniero Agrónomo, Agronomía", en: "Agricultural Engineer, Agronomy" },
             company: { es: "Universidad Nacional Agraria La Molina", en: "National Agrarian University La Molina" },
-            description: { 
+            description: {
                 es: "Formación sólida en ciencias agrarias, gestión de recursos naturales y producción vegetal sostenible.",
                 en: "Solid background in agricultural sciences, natural resource management, and sustainable plant production."
             }
