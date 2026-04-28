@@ -46,6 +46,8 @@ Este documento desglosa las tareas necesarias para implementar el rediseño insp
 ### Tarea 2.2: Efecto de Fondo "Lluvia de Códigos Agrícola"
 - [x] Desarrollar un componente de fondo (`AgroBackground.astro`).
 - [x] Crear animación que simule caída de hojas/símbolos.
+  - **Iconos utilizados**: 🌱, 💧, 🌿, 🧬, 📊, 🛰️, 🌾, 🚜, 📈.
+  - **Velocidad**: 1px por frame (aprox. 60px/s) para una caída suave y orgánica.
 - [x] Asegurar que la animación no afecte el rendimiento.
 - [x] **Test**: Verificar que el canvas ocupe todo el fondo y no interfiera con los clics en los elementos del sitio.
 
