@@ -43,41 +43,49 @@ const { skills } = siteData;
   .tech-stack-section {
     padding: 8rem 0;
     position: relative;
+    z-index: 1;
   }
 
   .section-intro {
-    background: linear-gradient(to right, transparent, rgba(16, 185, 129, 0.05), transparent);
-    padding: 1rem;
-    border-radius: 12px;
+    background: rgba(10, 21, 17, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
     color: var(--text-main) !important;
     font-weight: 500;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
 
   .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    align-items: start;
   }
 
   .tech-group {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(13, 25, 21, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 32px;
     padding: 2.5rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
-    height: 100%;
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Allow shadow and glow to show */
   }
 
   .tech-group:hover {
     border-color: var(--agro-accent);
-    background: rgba(16, 185, 129, 0.03);
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    background: rgba(16, 185, 129, 0.05);
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    z-index: 2;
   }
 
   .group-title {
@@ -96,7 +104,7 @@ const { skills } = siteData;
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(to right, rgba(16, 185, 129, 0.3), transparent);
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.4), transparent);
   }
 
   .tech-items {
@@ -113,7 +121,7 @@ const { skills } = siteData;
   }
 
   .tech-item:hover {
-    transform: translateX(8px);
+    transform: translateX(10px);
   }
 
   .tech-info {
@@ -129,6 +137,7 @@ const { skills } = siteData;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--agro-accent);
   }
 
   .tech-image-icon {
@@ -149,22 +158,22 @@ const { skills } = siteData;
   }
 
   .star {
-    width: 16px;
+    width: 18px;
     height: 6px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 999px;
     transition: all 0.4s ease;
   }
 
   .star.filled {
     background: var(--agro-accent);
-    box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
   }
 
   @media (max-width: 1024px) {
     .tech-grid {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
   }
 
@@ -173,7 +182,7 @@ const { skills } = siteData;
       grid-template-columns: 1fr;
     }
     .tech-group {
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 2rem;
     }
   }
 </style>

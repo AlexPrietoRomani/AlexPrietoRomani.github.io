@@ -100,8 +100,8 @@ export const siteData = {
                 { name: "Streamlit", icon: "devicon-streamlit-plain colored", level: 3 },
                 { name: "Power BI", image: "/images/skills/powerbi.png", level: 3 },
                 { name: "Shiny", image: "/images/skills/shiny_v2.png", level: 3 },
-                { name: "Tableau", icon: "devicon-python-plain", level: 2 },
-                { name: "Plotly", icon: "devicon-python-plain", level: 2 }
+                { name: "Tableau", icon: "devicon-python-plain", level: 1 },
+                { name: "Plotly", image: "/images/skills/plotly.png", level: 3 }
             ]
         },
         {
