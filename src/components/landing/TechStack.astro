@@ -46,71 +46,70 @@ const { skills } = siteData;
     z-index: 1;
   }
 
+  .tech-stack-section {
+    padding: 8rem 0;
+    position: relative;
+    z-index: 1;
+  }
+
   .section-intro {
-    background: rgba(10, 21, 17, 0.8);
-    backdrop-filter: blur(8px);
-    padding: 1.5rem 2rem;
-    border-radius: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    color: var(--text-main) !important;
-    font-weight: 500;
+    color: #ffffff !important;
+    font-weight: 400;
+    font-size: 1.1rem;
     max-width: 800px;
     margin: 0 auto 4rem auto;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
   }
 
   .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
+    gap: 2.5rem;
     align-items: start;
   }
 
   .tech-group {
-    background: rgba(13, 25, 21, 0.95);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 32px;
-    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 28px;
+    padding: 2.25rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: visible; /* Allow shadow and glow to show */
   }
 
   .tech-group:hover {
-    border-color: var(--agro-accent);
-    background: rgba(16, 185, 129, 0.05);
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.02);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 
   .group-title {
-    font-size: 1.1rem;
-    font-weight: 800;
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--agro-accent);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 2.5rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .group-title::after {
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(to right, rgba(16, 185, 129, 0.4), transparent);
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.2), transparent);
   }
 
   .tech-items {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .tech-item {
@@ -121,59 +120,58 @@ const { skills } = siteData;
   }
 
   .tech-item:hover {
-    transform: translateX(10px);
+    transform: translateX(5px);
   }
 
   .tech-info {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .tech-icon {
-    font-size: 1.6rem;
-    width: 32px;
+    font-size: 1.5rem;
+    width: 28px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--agro-accent);
   }
 
   .tech-image-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
   }
 
   .tech-name {
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     color: var(--text-main);
   }
 
   .tech-level {
     display: flex;
-    gap: 8px;
+    gap: 6px;
   }
 
   .star {
-    width: 18px;
-    height: 6px;
+    width: 14px;
+    height: 4px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 999px;
+    border-radius: 2px;
     transition: all 0.4s ease;
   }
 
   .star.filled {
     background: var(--agro-accent);
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
   }
 
   @media (max-width: 1024px) {
     .tech-grid {
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      gap: 1.5rem;
     }
   }
 
@@ -182,7 +180,7 @@ const { skills } = siteData;
       grid-template-columns: 1fr;
     }
     .tech-group {
-      padding: 2.5rem 2rem;
+      padding: 2rem 1.5rem;
     }
   }
 </style>
