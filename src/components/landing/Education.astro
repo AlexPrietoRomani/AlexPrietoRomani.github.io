@@ -159,6 +159,35 @@ const { education } = siteData;
     right: 1.5rem;
     font-size: 1.2rem;
   }
+
+  @media (max-width: 768px) {
+    .timeline-item {
+      padding-left: 50px;
+    }
+    .timeline-line, .timeline-dot {
+      left: 20px;
+    }
+    .timeline-content {
+      padding: 1.5rem;
+    }
+    .role {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .timeline-item {
+      padding-left: 40px;
+    }
+    .timeline-line, .timeline-dot {
+      left: 15px;
+    }
+    .type-badge {
+      top: 1rem;
+      right: 1rem;
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <script>

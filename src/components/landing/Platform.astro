@@ -86,7 +86,7 @@ const { courses } = siteData;
 /* ... rest of existing styles ... */
   .platform-courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
   }
 
@@ -269,6 +269,8 @@ const { courses } = siteData;
 
     .platform-description {
       max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .platform-features {
@@ -285,13 +287,24 @@ const { courses } = siteData;
   }
 
   @media (max-width: 768px) {
+    .platform-glass-card {
+      padding: 2.5rem 1.5rem;
+      border-radius: 32px;
+    }
+
     .platform-title {
-      font-size: 2.25rem;
+      font-size: 2rem;
     }
     
     .platform-features {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
+    }
+
+    .platform-cta {
+      width: 100%;
+      justify-content: center;
+      padding: 1rem;
     }
   }
 </style>

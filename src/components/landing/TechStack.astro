@@ -129,9 +129,19 @@ const { skills } = siteData;
     box-shadow: 0 0 8px var(--agro-accent);
   }
 
+  @media (max-width: 1024px) {
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
   @media (max-width: 768px) {
     .tech-grid {
       grid-template-columns: 1fr;
+    }
+    .tech-group {
+      padding: 1.5rem;
     }
   }
 </style>

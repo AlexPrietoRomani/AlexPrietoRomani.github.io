@@ -84,12 +84,15 @@ body {
   min-height: 100vh;
 }
 
-/* Contenedor principal para que ocupe todo el ancho de la página */
+/* Contenedor principal para que ocupe todo el ancho de la página con un máximo razonable */
 .app-shell .container {
-  max-width: none;
   width: 100%;
-  padding-left: clamp(1rem, 3vw, 3rem);
-  padding-right: clamp(1rem, 3vw, 3rem);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 5vw, 2rem);
+  padding-right: clamp(1rem, 5vw, 2rem);
+  box-sizing: border-box;
 }
 
 /* Enlaces dentro de la app */

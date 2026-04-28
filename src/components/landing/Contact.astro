@@ -39,7 +39,7 @@ const { contact } = siteData;
 <style>
   .contact-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
     align-items: center;
   }
@@ -100,9 +100,13 @@ const { contact } = siteData;
   @media (max-width: 768px) {
     .contact-wrapper {
       text-align: center;
+      gap: 2rem;
     }
     .contact-info {
       text-align: center;
+    }
+    .contact-card {
+      padding: 1.5rem;
     }
   }
 </style>
