@@ -3,13 +3,35 @@
    ========================================================= */
 /* Variables reutilizables para toda la plataforma */
 :root {
+  /* Brand Colors (Agro Identity) */
   --agro-green: #2F855A;
   --deep-forest: #22543D;
-  --agro-light: #F7FAF2;
-  --data-blue: #2B6CB0;
-  --deep-data-blue: #1E3A8A;
-  --charcoal: #1F2933;
-  --card-shadow: 0 24px 40px rgba(34, 84, 61, 0.18);
+  --agro-accent: #48BB78;
+  
+  /* Dark Theme Backgrounds */
+  --bg-main: #050a08;
+  --bg-surface: #0a1511;
+  --bg-surface-2: #11251c;
+  
+  /* Text Colors */
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+  
+  /* Borders & Dividers */
+  --border-main: rgba(47, 133, 90, 0.2);
+  --border-highlight: rgba(72, 187, 120, 0.4);
+  
+  /* Shadows & Effects */
+  --card-shadow: 0 24px 40px rgba(0, 0, 0, 0.4);
+  --glass-bg: rgba(10, 21, 17, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --nav-blur: 12px;
+
+  /* Legacy Compat (mapped to new theme) */
+  --agro-light: var(--bg-main);
+  --data-blue: #4fd1c5; /* Cyan-green for contrast */
+  --charcoal: var(--text-main);
 }
 
 /* =========================================================
@@ -17,13 +39,16 @@
    ========================================================= */
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  background-color: var(--agro-light);
-  color: var(--charcoal);
-  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Animations */
