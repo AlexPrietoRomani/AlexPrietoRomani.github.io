@@ -9,12 +9,11 @@ import Projects from '../components/landing/Projects.astro';
 import Contact from '../components/landing/Contact.astro';
 import Footer from '../components/layout/Footer.astro';
 import { siteData } from '../data/siteData';
-import '../styles/global.css';
 
 const { cv, hero } = siteData;
 ---
 
-<Layout title={`${hero.title} | ${hero.kicker}`}>
+<Layout title={`${hero.title} | ${hero.kicker.es}`}>
   <Navbar />
   
   <main>
@@ -25,15 +24,15 @@ const { cv, hero } = siteData;
     <Projects />
     
     <!-- CV Section -->
-    <div id="cv" class="section cv-section">
+    <section id="cv" class="section cv-section" data-section>
       <div class="container text-center">
-        <h2 class="section-title">{cv.title}</h2>
-        <p class="section-intro">{cv.subtitle}</p>
-        <a href={cv.path} download class="btn btn-primary btn-lg">
-          {cv.buttonText}
+        <h2 class="section-title" id="cv-title">{cv.title.es}</h2>
+        <p class="section-intro" id="cv-subtitle">{cv.subtitle.es}</p>
+        <a href={cv.path} download class="resume-btn" id="cv-btn">
+          {cv.buttonText.es}
         </a>
       </div>
-    </div>
+    </section>
     
     <Contact />
   </main>
@@ -42,6 +41,46 @@ const { cv, hero } = siteData;
 </Layout>
 
 <style>
-  .text-center { text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .btn-lg { padding: 1rem 2rem; font-size: 1.25rem; text-decoration: none; }
+  .cv-section {
+    background: linear-gradient(to bottom, transparent, rgba(47, 133, 90, 0.05));
+  }
+  .text-center { 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1.5rem;
+  }
+  .resume-btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: var(--agro-green);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(47, 133, 90, 0.3);
+    transition: all 0.3s ease;
+  }
+  .resume-btn:hover {
+    transform: translateY(-5px);
+    background: var(--agro-accent);
+    box-shadow: 0 15px 40px rgba(47, 133, 90, 0.4);
+  }
 </style>
+
+<script>
+  import { $lang } from '../stores/langStore';
+  import { siteData } from '../data/siteData';
+
+  $lang.subscribe(lang => {
+    const title = document.getElementById('cv-title');
+    const subtitle = document.getElementById('cv-subtitle');
+    const btn = document.getElementById('cv-btn');
+
+    if (title) title.textContent = siteData.cv.title[lang];
+    if (subtitle) subtitle.textContent = siteData.cv.subtitle[lang];
+    if (btn) btn.textContent = siteData.cv.buttonText[lang];
+  });
+</script>

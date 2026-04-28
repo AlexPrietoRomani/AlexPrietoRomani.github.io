@@ -4,23 +4,131 @@ import { siteData } from '../../data/siteData';
 const { projects } = siteData;
 ---
 
-<div id="projects" class="section projects-section">
+<section id="projects" class="section projects-section" data-section>
   <div class="container">
-    <h2 class="section-title">Proyectos destacados</h2>
-    <p class="section-intro">Iniciativas personales y de investigación que combinan ciencia de datos, IA y experiencia agronómica.</p>
+    <h2 class="section-title" id="projects-title">{siteData.lang === 'en' ? 'Featured Projects' : 'Proyectos destacados'}</h2>
+    <p class="section-intro" id="projects-intro">
+      {siteData.lang === 'en' ? 'Personal and research initiatives combining data science, AI, and agronomic expertise.' : 'Iniciativas personales y de investigación que combinan ciencia de datos, IA y experiencia agronómica.'}
+    </p>
+    
     <div class="projects-grid">
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <article class="project-card">
-          <h3 class="project-title">{project.name}</h3>
-          <p class="project-description">{project.description}</p>
-          <div class="project-tags">
-            {project.tags.map((tag) => (
-              <span class="tag">{tag}</span>
-            ))}
+          <div class="project-card-inner">
+            <h3 class="project-title" data-index={index}>{project.name.es}</h3>
+            <p class="project-description" data-index={index}>{project.description.es}</p>
+            <div class="project-tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            <a href={project.link} target="_blank" class="project-link" data-index={index}>
+              {siteData.lang === 'en' ? 'View on GitHub' : 'Ver en GitHub'}
+            </a>
           </div>
-          <a href={project.link} target="_blank" class="project-link">Ver en GitHub</a>
         </article>
       ))}
     </div>
   </div>
-</div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: var(--bg-surface);
+    border-radius: 24px;
+    border: 1px solid var(--border-main);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--agro-accent);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .project-card-inner {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .project-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    background: rgba(72, 187, 120, 0.1);
+    color: var(--agro-accent);
+    border-radius: 999px;
+  }
+
+  .project-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--agro-accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    transition: color 0.2s;
+  }
+
+  .project-link:hover {
+    color: var(--text-inverse);
+  }
+</style>
+
+<script>
+  import { $lang } from '../../stores/langStore';
+  import { siteData } from '../../data/siteData';
+
+  $lang.subscribe(lang => {
+    const title = document.getElementById('projects-title');
+    const intro = document.getElementById('projects-intro');
+    if (title) title.textContent = lang === 'es' ? 'Proyectos destacados' : 'Featured Projects';
+    if (intro) intro.textContent = lang === 'es' 
+      ? 'Iniciativas personales y de investigación que combinan ciencia de datos, IA y experiencia agronómica.' 
+      : 'Personal and research initiatives combining data science, AI, and agronomic expertise.';
+
+    document.querySelectorAll('.project-title').forEach((el, i) => {
+      el.textContent = siteData.projects[i].name[lang];
+    });
+    document.querySelectorAll('.project-description').forEach((el, i) => {
+      el.textContent = siteData.projects[i].description[lang];
+    });
+    document.querySelectorAll('.project-link').forEach((el, i) => {
+      el.textContent = lang === 'es' ? 'Ver en GitHub' : 'View on GitHub';
+    });
+  });
+</script>

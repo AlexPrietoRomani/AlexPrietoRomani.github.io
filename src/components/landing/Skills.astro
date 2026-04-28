@@ -4,14 +4,14 @@ import { siteData } from '../../data/siteData';
 const { skills } = siteData;
 ---
 
-<div class="section skills-section">
+<section id="tech" class="section skills-section" data-section>
   <div class="container">
-    <h2 class="section-title">Tecnologías y herramientas</h2>
+    <h2 class="section-title" id="skills-title">{siteData.lang === 'en' ? 'Technologies & Tools' : 'Tecnologías y herramientas'}</h2>
     
     <div class="skills-grid">
-      {skills.map(category => (
+      {skills.map((category, catIndex) => (
         <div class="skill-category-card">
-          <h3 class="category-title">{category.category}</h3>
+          <h3 class="category-title" data-cat-index={catIndex}>{category.category.es}</h3>
           <div class="tech-list">
             {category.items.map(tech => (
               <div class="tech-item" title={tech.name}>
@@ -28,7 +28,7 @@ const { skills } = siteData;
       ))}
     </div>
   </div>
-</div>
+</section>
 
 <style>
   .skills-grid {
@@ -38,25 +38,25 @@ const { skills } = siteData;
   }
 
   .skill-category-card {
-    background: #ffffff;
+    background: var(--bg-surface);
     border-radius: 24px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-main);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.03);
   }
 
   .skill-category-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(34, 84, 61, 0.12);
+    border-color: var(--agro-accent);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   }
 
   .category-title {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--deep-forest);
-    border-bottom: 2px solid rgba(47, 133, 90, 0.1);
+    color: var(--agro-accent);
+    border-bottom: 1px solid var(--border-main);
     padding-bottom: 0.75rem;
   }
 
@@ -73,15 +73,18 @@ const { skills } = siteData;
     gap: 0.5rem;
     padding: 0.75rem;
     border-radius: 12px;
-    background-color: var(--agro-light);
+    background-color: var(--bg-surface-2);
     width: 90px;
     height: 100px;
     justify-content: center;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
+    border: 1px solid transparent;
   }
   
   .tech-item:hover {
-    background-color: rgba(47, 133, 90, 0.1);
+    background-color: var(--bg-surface);
+    border-color: var(--border-highlight);
+    transform: scale(1.05);
   }
 
   .tech-icon {
@@ -97,8 +100,25 @@ const { skills } = siteData;
   .tech-name {
     font-size: 0.8rem;
     font-weight: 500;
-    color: var(--charcoal);
+    color: var(--text-muted);
     text-align: center;
     line-height: 1.2;
   }
 </style>
+
+<script>
+  import { $lang } from '../../stores/langStore';
+  import { siteData } from '../../data/siteData';
+
+  $lang.subscribe(lang => {
+    const title = document.getElementById('skills-title');
+    if (title) title.textContent = lang === 'es' ? 'Tecnologías y herramientas' : 'Technologies & Tools';
+
+    document.querySelectorAll('.category-title').forEach((el, i) => {
+      const catIndex = el.getAttribute('data-cat-index');
+      if (catIndex !== null) {
+        el.textContent = siteData.skills[parseInt(catIndex)].category[lang];
+      }
+    });
+  });
+</script>

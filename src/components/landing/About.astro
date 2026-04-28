@@ -4,23 +4,89 @@ import { siteData } from '../../data/siteData';
 const { about } = siteData;
 ---
 
-<div class="section about-section">
+<section id="about" class="section about-section" data-section>
   <div class="container">
-    <h2 class="section-title">Sobre mí</h2>
-    <div class="bio-grid">
-      {about.cards.map(card => (
-        <div class="bio-card">
-          <h3>{card.title}</h3>
-          <p>{card.content}</p>
-        </div>
-      ))}
+    <h2 class="section-title" id="about-title">{about.title.es}</h2>
+    
+    <div class="bio-content">
+      <p class="bio-text" id="about-content">{about.content.es}</p>
     </div>
     
-    <h3 class="section-subtitle">Focos actuales</h3>
+    <h3 class="section-subtitle" id="focus-title">{siteData.lang === 'en' ? 'Current Focus' : 'Focos actuales'}</h3>
     <ul class="focus-list">
-      {about.focus.map(item => (
-        <li><strong>{item.title}</strong>{item.description}</li>
+      {about.focus.map((item, index) => (
+        <li key={index}>
+          <strong class="focus-item-title" data-index={index}>{item.title.es}</strong>
+          <span class="focus-item-desc" data-index={index}>{item.description.es}</span>
+        </li>
       ))}
     </ul>
   </div>
-</div>
+</section>
+
+<style>
+  .bio-content {
+    background: var(--bg-surface);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-main);
+    margin-bottom: 2rem;
+  }
+
+  .bio-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .focus-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .focus-list li {
+    background: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-main);
+    transition: transform 0.3s ease;
+  }
+
+  .focus-list li:hover {
+    transform: translateY(-5px);
+    border-color: var(--agro-accent);
+  }
+
+  .focus-item-title {
+    color: var(--agro-accent);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+<script>
+  import { $lang } from '../../stores/langStore';
+  import { siteData } from '../../data/siteData';
+
+  $lang.subscribe(lang => {
+    const title = document.getElementById('about-title');
+    const content = document.getElementById('about-content');
+    const focusTitle = document.getElementById('focus-title');
+
+    if (title) title.textContent = siteData.about.title[lang];
+    if (content) content.textContent = siteData.about.content[lang];
+    if (focusTitle) focusTitle.textContent = lang === 'es' ? 'Focos actuales' : 'Current Focus';
+
+    // Update focus items
+    document.querySelectorAll('.focus-item-title').forEach((el, i) => {
+      el.textContent = siteData.about.focus[i].title[lang];
+    });
+    document.querySelectorAll('.focus-item-desc').forEach((el, i) => {
+      el.textContent = siteData.about.focus[i].description[lang];
+    });
+  });
+</script>
