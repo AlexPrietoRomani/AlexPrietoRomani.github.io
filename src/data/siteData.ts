@@ -164,58 +164,62 @@ export const siteData = {
                 image: "/images/courses/disenos_estadisticos_v3.jpg",
                 href: "https://alex-prieto-00.shinyapps.io/Curso_disennos_experimentales/"
             }
-        ]
-    },
-    career: [
+    experience: [
         {
-            year: "2024 - Present",
+            year: { es: "Julio 2025 - Presente", en: "July 2025 - Present" },
+            title: { es: "Agriculture Data Science", en: "Agriculture Data Science" },
+            company: { es: "Hortifrut S.A. – La Libertad, Perú", en: "Hortifrut S.A. – La Libertad, Peru" },
+            description: { 
+                es: "Diseño y ejecución de modelos estadísticos y algoritmos de analítica avanzada para transformar datos agronómicos en información accionable. Desarrollo de indicadores agronómicos y soporte analítico en planificación agrícola, fertirriego y gestión operativa. Colaboración en el modelo de idoneidad agrometeorológica para establecimiento y manejo de genética. Análisis de biometría, fenología y estimación de fruta para optimizar decisiones. Integración de herramientas digitales y LLMs para reportes automatizados.",
+                en: "Design and execution of statistical models and advanced analytics algorithms to transform agronomic data into actionable insights. Development of agronomic indicators and analytical support in agricultural planning, fertigation, and operational management. Collaboration in the agrometeorological suitability model. Analysis of biometry, phenology, and fruit estimation. Integration of digital tools and LLMs for automated reports."
+            }
+        },
+        {
+            year: { es: "Sep. 2024 – Junio 2025", en: "Sep. 2024 – June 2025" },
             title: { es: "Data Science I+D", en: "R&D Data Science" },
-            company: { es: "CAMPOSOL S.A.", en: "CAMPOSOL S.A." },
+            company: { es: "CAMPOSOL S.A. – La Libertad, Perú", en: "CAMPOSOL S.A. – La Libertad, Peru" },
             description: { 
-                es: "Desarrollo de modelos predictivos y soluciones de analítica avanzada para optimización de procesos agrícolas e investigación.",
-                en: "Development of predictive models and advanced analytics solutions for agricultural process optimization and research."
-            },
-            type: "work"
+                es: "Desarrollo e implementación de modelos predictivos supervisados (Regresión, Random Forest, XGBoost) y no supervisados (clustering) para identificar insights y optimizar decisiones estratégicas. Creación y mantenimiento de dashboards interactivos en Power BI y Shiny. Ejecución de procesos ETL con Python y SQL. Participación activa en experimentación estadística (test de hipótesis, ANOVA).",
+                en: "Development and implementation of supervised predictive models (Regression, Random Forest, XGBoost) and unsupervised (clustering) to identify insights and optimize strategic decisions. Creation and maintenance of interactive dashboards in Power BI and Shiny. Execution of ETL processes with Python and SQL. Active participation in statistical experimentation (hypothesis testing, ANOVA)."
+            }
         },
         {
-            year: "2024 - Present",
-            title: { es: "Maestría en Big Data y Data Science", en: "Master's in Big Data and Data Science" },
-            company: { es: "Universidad Internacional de Valencia (VIU)", en: "International University of Valencia (VIU)" },
+            year: { es: "Ago. 2023 – Ago. 2024", en: "Aug. 2023 – Aug. 2024" },
+            title: { es: "Investigador de Mejoramiento Genético", en: "Genetic Improvement Researcher" },
+            company: { es: "CAMPOSOL S.A. – La Libertad, Perú", en: "CAMPOSOL S.A. – La Libertad, Peru" },
             description: { 
-                es: "Enfoque en procesamiento de grandes volúmenes de datos, arquitecturas cloud y aprendizaje automático avanzado.",
+                es: "Automatización del flujo de trabajo ETL mediante scripts de Python para garantizar la integridad y consistencia de datos. Implementación y mantenimiento de dashboards de Power BI para monitoreo y visualización eficiente de resultados comerciales y operativos. Realización de análisis estadísticos avanzados para identificación de insights y optimización de recursos en proyectos específicos.",
+                en: "Automation of ETL workflow through Python scripts to ensure data integrity and consistency. Implementation and maintenance of Power BI dashboards for efficient monitoring and visualization of commercial and operational results. Execution of advanced statistical analysis to identify insights and optimize resources in specific projects."
+            }
+        }
+    ],
+    education: [
+        {
+            year: { es: "Enero de 2024 - Abril de 2025", en: "January 2024 - April 2025" },
+            title: { es: "Máster Universitario en Big Data y Ciencia de Datos", en: "Master's in Big Data and Data Science" },
+            company: { es: "VIU - Universidad Internacional de Valencia", en: "VIU - International University of Valencia" },
+            description: { 
+                es: "Enfoque en procesamiento de grandes volúmenes de datos (Data Processing), arquitecturas cloud y aprendizaje automático avanzado.",
                 en: "Focus on large-scale data processing, cloud architectures, and advanced machine learning."
-            },
-            type: "education"
+            }
         },
         {
-            year: "2024",
-            title: { es: "Especialización en ML Engineering", en: "ML Engineering Specialization" },
+            year: { es: "2024", en: "2024" },
+            title: { es: "Especialización en Machine Learning Engineering", en: "ML Engineering Specialization" },
             company: { es: "DMC Perú", en: "DMC Perú" },
             description: { 
                 es: "Profundización en despliegue de modelos, MLOps y escalabilidad de sistemas de inteligencia artificial.",
                 en: "Deep dive into model deployment, MLOps, and artificial intelligence systems scalability."
-            },
-            type: "education"
+            }
         },
         {
-            year: "2023 - 2024",
-            title: { es: "Investigador de Mejoramiento Genético", en: "Genetic Improvement Researcher" },
-            company: { es: "CAMPOSOL S.A.", en: "CAMPOSOL S.A." },
-            description: { 
-                es: "Aplicación de estadística y bioinformática para la selección y mejora de variedades vegetales comerciales.",
-                en: "Application of statistics and bioinformatics for the selection and improvement of commercial plant varieties."
-            },
-            type: "work"
-        },
-        {
-            year: "2015 - 2020",
-            title: { es: "Bachiller en Ciencias - Agronomía", en: "Bachelor of Science - Agronomy" },
-            company: { es: "Universidad Nacional Agraria La Molina (UNALM)", en: "National Agrarian University La Molina (UNALM)" },
+            year: { es: "Enero de 2015 - Diciembre de 2020", en: "January 2015 - December 2020" },
+            title: { es: "Ingeniero Agrónomo, Agronomía", en: "Agricultural Engineer, Agronomy" },
+            company: { es: "Universidad Nacional Agraria La Molina", en: "National Agrarian University La Molina" },
             description: { 
                 es: "Formación sólida en ciencias agrarias, gestión de recursos naturales y producción vegetal sostenible.",
                 en: "Solid background in agricultural sciences, natural resource management, and sustainable plant production."
-            },
-            type: "education"
+            }
         }
     ]
 };

@@ -54,23 +54,24 @@ Este documento desglosa las tareas necesarias para implementar el rediseño insp
 
 ---
 
-## Fase 3: Sección de Carrera (Career Timeline) [COMPLETADA]
+## Fase 3: Sección de Carrera y Educación
 
-### Tarea 3.1: Extracción de Datos del CV
-- [x] Analizar el PDF `public/docs/Alex_Prieto_Romani_CV.pdf`.
-- [x] Estructurar la cronología profesional (fechas, cargos, logros principales).
-- [x] **Test**: Verificar que los datos extraídos coincidan con el PDF original.
+### Tarea 3.1: Extracción y Estructuración de Datos
+- [x] Extraer la experiencia laboral y educación del nuevo texto proporcionado.
+- [x] Estructurar la data en `siteData.ts` separando en dos arreglos: `experience` y `education`.
+- [x] **Test**: Verificar que los datos en JSON reflejen fielmente el texto.
 
-### Tarea 3.2: Componente de Línea de Tiempo
-- [x] Desarrollar `src/components/landing/Experience.astro`.
-- [x] Implementar diseño de línea de tiempo vertical (estilo template).
-- [x] Asegurar que sea bilingüe (ES/EN).
-- [x] **Test**: Validar que el orden cronológico sea correcto y los textos cambien de idioma.
+### Tarea 3.2: Componente de Experiencia Laboral
+- [x] Refactorizar `src/components/landing/Experience.astro`.
+- [x] Implementar diseño de línea de tiempo alineada a la izquierda para mejor legibilidad.
+- [x] Asegurar soporte bilingüe (ES/EN) y corregir problemas de alineación visual.
+- [x] **Test**: Validar renderizado correcto en escritorio y móvil.
 
-### Tarea 3.3: Creación del Componente Timeline
-- [x] Integrar `Experience.astro` en la página principal.
-- [x] Implementar la línea vertical central con nodos iluminados al hacer scroll.
-- [x] Renderizar tarjetas alternadas para cada experiencia/estudio siguiendo la estética del template.
+### Tarea 3.3: Componente de Educación
+- [x] Crear `src/components/landing/Education.astro` siguiendo el mismo patrón visual de `Experience.astro`.
+- [x] Integrar ambos componentes en `index.astro` uno debajo del otro.
+- [x] Implementar la iluminación al hacer scroll.
+- [x] **Test**: Verificar que ambos timelines se vean coherentes y el scroll spy funcione.
 
 ---
 

@@ -1,27 +1,27 @@
 ---
 import { siteData } from '../../data/siteData';
-const { experience } = siteData;
+const { education } = siteData;
 ---
 
-<section id="experience" class="section experience-section" data-section>
+<section id="education" class="section education-section" data-section>
   <div class="container">
-    <h2 class="section-title" id="experience-title">{siteData.lang === 'en' ? 'Professional Experience' : 'Experiencia Laboral'}</h2>
+    <h2 class="section-title" id="education-title">{siteData.lang === 'en' ? 'Education' : 'Educación'}</h2>
     
     <div class="timeline">
       <div class="timeline-line"></div>
       
-      {experience.map((item, index) => (
+      {education.map((item, index) => (
         <div class="timeline-item left">
           <div class="timeline-dot">
             <div class="dot-inner"></div>
           </div>
           
           <div class="timeline-content">
-            <span class="year" data-exp-year-index={index}>{item.year.es}</span>
-            <h3 class="role" data-exp-role-index={index}>{item.title.es}</h3>
-            <h4 class="company" data-exp-company-index={index}>{item.company.es}</h4>
-            <p class="description" data-exp-desc-index={index}>{item.description.es}</p>
-            <div class="type-badge">💼</div>
+            <span class="year" data-edu-year-index={index}>{item.year.es}</span>
+            <h3 class="role" data-edu-role-index={index}>{item.title.es}</h3>
+            <h4 class="company" data-edu-company-index={index}>{item.company.es}</h4>
+            <p class="description" data-edu-desc-index={index}>{item.description.es}</p>
+            <div class="type-badge">🎓</div>
           </div>
         </div>
       ))}
@@ -30,9 +30,9 @@ const { experience } = siteData;
 </section>
 
 <style>
-  .experience-section {
+  .education-section {
     position: relative;
-    padding: 6rem 0 2rem;
+    padding: 2rem 0 6rem;
   }
 
   .timeline {
@@ -69,7 +69,7 @@ const { experience } = siteData;
   .timeline-dot {
     position: absolute;
     left: 30px;
-    top: 2rem; /* Alineado con el inicio de la tarjeta */
+    top: 2rem;
     transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
@@ -166,27 +166,27 @@ const { experience } = siteData;
   import { siteData } from '../../data/siteData';
 
   $lang.subscribe(lang => {
-    const title = document.getElementById('experience-title');
-    if (title) title.textContent = lang === 'es' ? 'Experiencia Laboral' : 'Professional Experience';
+    const title = document.getElementById('education-title');
+    if (title) title.textContent = lang === 'es' ? 'Educación' : 'Education';
 
-    document.querySelectorAll('[data-exp-year-index]').forEach(el => {
-      const idx = el.getAttribute('data-exp-year-index');
-      if (idx !== null) el.textContent = siteData.experience[parseInt(idx)].year[lang];
+    document.querySelectorAll('[data-edu-year-index]').forEach(el => {
+      const idx = el.getAttribute('data-edu-year-index');
+      if (idx !== null) el.textContent = siteData.education[parseInt(idx)].year[lang];
     });
 
-    document.querySelectorAll('[data-exp-role-index]').forEach(el => {
-      const idx = el.getAttribute('data-exp-role-index');
-      if (idx !== null) el.textContent = siteData.experience[parseInt(idx)].title[lang];
+    document.querySelectorAll('[data-edu-role-index]').forEach(el => {
+      const idx = el.getAttribute('data-edu-role-index');
+      if (idx !== null) el.textContent = siteData.education[parseInt(idx)].title[lang];
     });
 
-    document.querySelectorAll('[data-exp-company-index]').forEach(el => {
-      const idx = el.getAttribute('data-exp-company-index');
-      if (idx !== null) el.textContent = siteData.experience[parseInt(idx)].company[lang];
+    document.querySelectorAll('[data-edu-company-index]').forEach(el => {
+      const idx = el.getAttribute('data-edu-company-index');
+      if (idx !== null) el.textContent = siteData.education[parseInt(idx)].company[lang];
     });
 
-    document.querySelectorAll('[data-exp-desc-index]').forEach(el => {
-      const idx = el.getAttribute('data-exp-desc-index');
-      if (idx !== null) el.textContent = siteData.experience[parseInt(idx)].description[lang];
+    document.querySelectorAll('[data-edu-desc-index]').forEach(el => {
+      const idx = el.getAttribute('data-edu-desc-index');
+      if (idx !== null) el.textContent = siteData.education[parseInt(idx)].description[lang];
     });
   });
 
@@ -200,7 +200,7 @@ const { experience } = siteData;
     });
   }, observerOptions);
 
-  document.querySelectorAll('.experience-section .timeline-item').forEach(item => {
+  document.querySelectorAll('.education-section .timeline-item').forEach(item => {
     observer.observe(item);
   });
 </script>
