@@ -130,6 +130,46 @@ export const siteData = {
     ],
     projects: [
         {
+            name: { es: "Strata-Reader: Conversor PDF a Markdown", en: "Strata-Reader: PDF to Markdown Converter" },
+            description: {
+                es: "Extractor de alto rendimiento para RAG que transforma PDFs científicos en Markdown semántico y JSON de grafos en 0.02s/pág. Combina un motor en Rust (XY-Cut++ y R-Tree) con un Triage híbrido para delegar áreas complejas a VLMs locales (Qwen2.5-VL) con trazabilidad PRISMA.",
+                en: "High-performance parser for RAG converting scientific PDFs to semantic Markdown and structured graph JSON in 0.02s/page. It combines a Rust core (XY-Cut++ and R-Tree) with a hybrid Triage engine delegating complex sections to local VLMs (Qwen2.5-VL) with PRISMA traceability."
+            },
+            link: "https://github.com/AlexPrietoRomani/strata-reader",
+            image: "/images/projects/strata_reader.png",
+            tags: ["Rust", "Python", "Local AI", "Parser", "gRPC", "R-Tree"]
+        },
+        {
+            name: { es: "AgriSearch: Búsqueda Sistemática y RAG", en: "AgriSearch: Systematic Search & RAG" },
+            description: {
+                es: "Plataforma de asistente de investigación agrícola basada en directrices PRISMA 2020. Integra concurrentemente 9 bases de datos científicas con un microservicio de Active Learning en Rust (linfa, rusqlite-vec) para screening inteligente e indexación RAG con LLMs locales.",
+                en: "Agricultural research assistant platform based on PRISMA 2020 guidelines. Concurrently integrates 9 scientific databases with a Rust-based Active Learning microservice (linfa, rusqlite-vec) for smart screening and RAG indexing with local LLMs."
+            },
+            link: "https://github.com/AlexPrietoRomani/AgriSearch",
+            image: "/images/projects/agrisearch.png",
+            tags: ["Astro", "React", "Rust Axum", "FastAPI", "Active Learning", "Qdrant"]
+        },
+        {
+            name: { es: "BioRender: Captura de Movimiento RT", en: "BioRender: Real-Time Motion Capture" },
+            description: {
+                es: "Plataforma web de retargeting y captura de movimiento en tiempo real (mocap) 3D. Utiliza inferencia local de pose mediante Python FastAPI y MediaPipe a partir de una cámara/webcam, sincronizada a través de un API Gateway en Rust Axum con modelos 3D en React Three Fiber y WebGL.",
+                en: "Web platform for real-time 3D motion capture (mocap) and retargeting. Uses local pose inference via Python FastAPI and MediaPipe from a camera feed, synchronized through a Rust Axum API Gateway with 3D models animated using React Three Fiber and WebGL."
+            },
+            link: "https://github.com/AlexPrietoRomani/BioRender",
+            image: "/images/projects/biorender.png",
+            tags: ["React Three Fiber", "WebGL", "MediaPipe", "Rust Axum", "Astro", "FastAPI"]
+        },
+        {
+            name: { es: "TFM: Mitigación de Alucinaciones en LLMs Agrícolas", en: "TFM: Hallucination Mitigation in Agricultural LLMs" },
+            description: {
+                es: "Plataforma de investigación académica sobre medición y mitigación de alucinaciones en LLMs aplicados al agro (arándanos). Evalúa y compara chat directo (V0) frente a RAG vectorial (V1) y un agente autónomo corrector en LangGraph (V2) usando RAGAS y FactScore offline.",
+                en: "Academic research platform evaluating hallucination mitigation in LLMs applied to agriculture (blueberries). Compares direct chat (V0) with vector RAG (V1) and an autonomous self-correcting agent in LangGraph (V2) using RAGAS and FactScore offline."
+            },
+            link: "https://github.com/AlexPrietoRomani/TFM-hallucination",
+            image: "/images/projects/tfm_hallucination.png",
+            tags: ["LangGraph", "RAGAS", "FactScore", "Qdrant", "Streamlit", "Ollama"]
+        },
+        {
             name: { es: "Predicción de viento con series temporales", en: "Wind Prediction with Time Series" },
             description: {
                 es: "Aplicación Shiny para pronosticar velocidad y dirección del viento usando modelos de series temporales y visualizaciones interactivas.",
