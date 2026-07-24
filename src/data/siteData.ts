@@ -130,10 +130,30 @@ export const siteData = {
     ],
     projects: [
         {
+            name: { es: "AgroVisión: Plataforma de Precisión Agrícola", en: "AgroVisión: Precision Agriculture Platform" },
+            description: {
+                es: "Plataforma full-stack de monitoreo agronómico: gestión de parcelas con PostGIS, teledetección multiespectral (Sentinel-2, 5 índices), clima horario (Open-Meteo), asistente RAG por parcela (Groq/Llama 3), explorador SQL y conteo por dron. Backend FastAPI + UI Astro/Tailwind, desplegada en Hugging Face Spaces.",
+                en: "Full-stack precision agriculture platform: PostGIS field management, Sentinel-2 multispectral telemetry (5 indices), hourly weather (Open-Meteo), per-field RAG assistant (Groq/Llama 3), SQL explorer, and drone counting. FastAPI + Astro/Tailwind, deployed on Hugging Face Spaces."
+            },
+            link: "https://github.com/AlexPrietoRomani/AgroVision",
+            image: "/images/projects/agrovision.png",
+            tags: ["FastAPI", "Astro", "PostGIS", "Sentinel-2", "RAG", "Docker"]
+        },
+        {
+            name: { es: "Nutri-Fit: Salud y Fitness con IA", en: "Nutri-Fit: AI-Powered Health & Fitness" },
+            description: {
+                es: "Plataforma open-source de fitness y nutrición (web + móvil). Backend modular: nutrición, entrenamiento e IA multi-proveedor (OpenAI, Gemini, Ollama). Diario nutricional con cámara IA, escáner de código de barras, chat de planes de comida y rutinas con ejercicios reales. Flutter + FastAPI + Supabase + PostgreSQL.",
+                en: "Open-source fitness and nutrition platform (web + mobile). Modular backend: nutrition, training, and multi-provider AI (OpenAI, Gemini, Ollama). Nutritional diary with AI camera, barcode scanner, chat for meal plans and routines with real exercises. Flutter + FastAPI + Supabase + PostgreSQL."
+            },
+            link: "https://github.com/AlexPrietoRomani/nutri-fit",
+            image: "/images/projects/nutri_fit.png",
+            tags: ["Flutter", "FastAPI", "Supabase", "Multi-Provider AI", "PostgreSQL", "Docker"]
+        },
+        {
             name: { es: "Strata-Reader: Conversor PDF a Markdown", en: "Strata-Reader: PDF to Markdown Converter" },
             description: {
-                es: "Extractor de alto rendimiento para RAG que transforma PDFs científicos en Markdown semántico y JSON de grafos en 0.02s/pág. Combina un motor en Rust (XY-Cut++ y R-Tree) con un Triage híbrido para delegar áreas complejas a VLMs locales (Qwen2.5-VL) con trazabilidad PRISMA.",
-                en: "High-performance parser for RAG converting scientific PDFs to semantic Markdown and structured graph JSON in 0.02s/page. It combines a Rust core (XY-Cut++ and R-Tree) with a hybrid Triage engine delegating complex sections to local VLMs (Qwen2.5-VL) with PRISMA traceability."
+                es: "Parser de alto rendimiento para RAG que transforma PDFs científicos en Markdown semántico y JSON de grafos en 0.02s/pág. Motor en Rust (XY-Cut++, R-Tree) con Triage híbrido que delega áreas complejas a VLMs locales (Qwen2.5-VL) con trazabilidad PRISMA.",
+                en: "High-performance RAG parser converting scientific PDFs to semantic Markdown and graph JSON in 0.02s/page. Rust core (XY-Cut++, R-Tree) with hybrid Triage delegating complex sections to local VLMs (Qwen2.5-VL) with PRISMA traceability."
             },
             link: "https://github.com/AlexPrietoRomani/strata-reader",
             image: "/images/projects/strata_reader.png",
@@ -142,8 +162,8 @@ export const siteData = {
         {
             name: { es: "AgriSearch: Búsqueda Sistemática y RAG", en: "AgriSearch: Systematic Search & RAG" },
             description: {
-                es: "Plataforma de asistente de investigación agrícola basada en directrices PRISMA 2020. Integra concurrentemente 9 bases de datos científicas con un microservicio de Active Learning en Rust (linfa, rusqlite-vec) para screening inteligente e indexación RAG con LLMs locales.",
-                en: "Agricultural research assistant platform based on PRISMA 2020 guidelines. Concurrently integrates 9 scientific databases with a Rust-based Active Learning microservice (linfa, rusqlite-vec) for smart screening and RAG indexing with local LLMs."
+                es: "Asistente de investigación agrícola basado en PRISMA 2020. Integra 9 bases de datos científicas concurrentemente con un microservicio de Active Learning en Rust (linfa, rusqlite-vec) para screening inteligente e indexación RAG con LLMs locales.",
+                en: "Agricultural research assistant based on PRISMA 2020. Concurrently integrates 9 scientific databases with a Rust Active Learning microservice (linfa, rusqlite-vec) for smart screening and RAG indexing with local LLMs."
             },
             link: "https://github.com/AlexPrietoRomani/AgriSearch",
             image: "/images/projects/agrisearch.png",
@@ -152,35 +172,55 @@ export const siteData = {
         {
             name: { es: "BioRender: Captura de Movimiento RT", en: "BioRender: Real-Time Motion Capture" },
             description: {
-                es: "Plataforma web de retargeting y captura de movimiento en tiempo real (mocap) 3D. Utiliza inferencia local de pose mediante Python FastAPI y MediaPipe a partir de una cámara/webcam, sincronizada a través de un API Gateway en Rust Axum con modelos 3D en React Three Fiber y WebGL.",
-                en: "Web platform for real-time 3D motion capture (mocap) and retargeting. Uses local pose inference via Python FastAPI and MediaPipe from a camera feed, synchronized through a Rust Axum API Gateway with 3D models animated using React Three Fiber and WebGL."
+                es: "Plataforma web de captura de movimiento 3D en tiempo real. Inferencia local de pose con FastAPI + MediaPipe, sincronizada via API Gateway en Rust Axum con modelos 3D en React Three Fiber y WebGL.",
+                en: "Web platform for real-time 3D motion capture. Local pose inference with FastAPI + MediaPipe, synchronized via Rust Axum API Gateway with 3D models using React Three Fiber and WebGL."
             },
             link: "https://github.com/AlexPrietoRomani/BioRender",
             image: "/images/projects/biorender.png",
             tags: ["React Three Fiber", "WebGL", "MediaPipe", "Rust Axum", "Astro", "FastAPI"]
         },
         {
-            name: { es: "TFM: Mitigación de Alucinaciones en LLMs Agrícolas", en: "TFM: Hallucination Mitigation in Agricultural LLMs" },
+            name: { es: "TFM: Mitigación de Alucinaciones en LLMs", en: "TFM: Hallucination Mitigation in LLMs" },
             description: {
-                es: "Plataforma de investigación académica sobre medición y mitigación de alucinaciones en LLMs aplicados al agro (arándanos). Evalúa y compara chat directo (V0) frente a RAG vectorial (V1) y un agente autónomo corrector en LangGraph (V2) usando RAGAS y FactScore offline.",
-                en: "Academic research platform evaluating hallucination mitigation in LLMs applied to agriculture (blueberries). Compares direct chat (V0) with vector RAG (V1) and an autonomous self-correcting agent in LangGraph (V2) using RAGAS and FactScore offline."
+                es: "Plataforma académica que evalúa mitigación de alucinaciones en LLMs para el agro. Compara chat directo (V0), RAG vectorial (V1) y agente autónomo corrector en LangGraph (V2) usando RAGAS y FactScore.",
+                en: "Academic platform evaluating hallucination mitigation in LLMs for agriculture. Compares direct chat (V0), vector RAG (V1), and autonomous self-correcting agent in LangGraph (V2) using RAGAS and FactScore."
             },
             link: "https://github.com/AlexPrietoRomani/TFM-hallucination",
             image: "/images/projects/tfm_hallucination.png",
             tags: ["LangGraph", "RAGAS", "FactScore", "Qdrant", "Streamlit", "Ollama"]
         },
         {
-            name: { es: "Predicción de viento con series temporales", en: "Wind Prediction with Time Series" },
+            name: { es: "StartStats: Librería R para Agronomía", en: "StartStats: R Package for Agronomy" },
             description: {
-                es: "Aplicación Shiny para pronosticar velocidad y dirección del viento usando modelos de series temporales y visualizaciones interactivas.",
-                en: "Shiny application to forecast wind speed and direction using time series models and interactive visualizations."
+                es: "Paquete R para análisis estadístico en agronomía: grupos de significancia (Tukey, Games-Howell, Duncan), ANOVA tipo III, pruebas no paramétricas y visualización con ggplot2. Incluye `run_analysis()` para flujos completos de análisis.",
+                en: "R package for statistical analysis in agronomy: significance groups (Tukey, Games-Howell, Duncan), Type III ANOVA, non-parametric tests, and ggplot2 visualization. Includes `run_analysis()` for complete analysis workflows."
+            },
+            link: "https://github.com/AlexPrietoRomani/StartStats",
+            image: "/images/projects/startstats.png",
+            tags: ["R", "ggplot2", "ANOVA", "Estadística", "Paquete CRAN", "Agronomía"]
+        },
+        {
+            name: { es: "Generación y Clasificación de Imágenes", en: "Image Generation and Classification" },
+            description: {
+                es: "Suite en Streamlit para generar imágenes con modelos de difusión locales y clasificar resultados mediante modelos pre-entrenados.",
+                en: "Streamlit suite for generating images with local diffusion models and classifying results using pre-trained models."
+            },
+            link: "https://github.com/AlexPrietoRomani/Generacion-Clasificacion-Imagenes-Streamlit",
+            image: "/images/projects/generation.png",
+            tags: ["IA Generativa", "Clasificación", "Streamlit"]
+        },
+        {
+            name: { es: "Predicción de Viento con Series Temporales", en: "Wind Prediction with Time Series" },
+            description: {
+                es: "Aplicación Shiny para pronosticar velocidad y dirección del viento usando modelos LSTM y visualizaciones interactivas.",
+                en: "Shiny application to forecast wind speed and direction using LSTM models and interactive visualizations."
             },
             link: "https://github.com/AlexPrietoRomani/app_viento",
             image: "/images/projects/wind.png",
-            tags: ["Series de tiempo", "Pronóstico", "Shiny"]
+            tags: ["Series de tiempo", "LSTM", "Shiny", "Pronóstico"]
         },
         {
-            name: { es: "Detección de enfermedades en café", en: "Coffee Disease Detection" },
+            name: { es: "Detección de Enfermedades en Café", en: "Coffee Disease Detection" },
             description: {
                 es: "Entrenamiento y despliegue de un modelo YOLO ajustado para reconocer enfermedades en hojas de café a partir de imágenes etiquetadas.",
                 en: "Training and deployment of a fine-tuned YOLO model to recognize diseases in coffee leaves from labeled images."
@@ -190,20 +230,10 @@ export const siteData = {
             tags: ["Visión computacional", "YOLO", "Agtech"]
         },
         {
-            name: { es: "Generación y clasificación de imágenes", en: "Image Generation and Classification" },
+            name: { es: "DengAI: Predicción de Brotes", en: "DengAI: Outbreak Prediction" },
             description: {
-                es: "Suite en Streamlit para generar imágenes con modelos de difusión locales y clasificar resultados mediante modelos pre-entrenados.",
-                en: "Streamlit suite to generate images with local diffusion models and classify results using pre-trained models."
-            },
-            link: "https://github.com/AlexPrietoRomani/Generacion-Clasificacion-Imagenes-Streamlit",
-            image: "/images/projects/generation.png",
-            tags: ["IA Generativa", "Clasificación", "Streamlit"]
-        },
-        {
-            name: { es: "DengAI: Predicción de brotes", en: "DengAI: Outbreak Prediction" },
-            description: {
-                es: "Modelado predictivo para la competencia DengAI, estimando la incidencia de dengue combinando clima y series históricas.",
-                en: "Predictive modeling for the DengAI competition, estimating dengue incidence by combining climate and historical series."
+                es: "Modelado predictivo para la competencia DengAI, estimando la incidencia de dengue combinando variables climáticas y series históricas.",
+                en: "Predictive modeling for the DengAI competition, estimating dengue incidence by combining climate variables and historical series."
             },
             link: "https://github.com/AlexPrietoRomani/DengAI-Predicting-Disease-Spread",
             image: "/images/projects/dengue.png",

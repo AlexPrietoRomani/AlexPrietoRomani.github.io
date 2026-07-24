@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#312e81;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="680" cy="120" r="100" fill="#8b5cf6" opacity="0.1"/>
+  <circle cx="120" cy="380" r="60" fill="#a78bfa" opacity="0.08"/>
+  <rect x="80" y="180" width="60" height="120" rx="8" fill="#8b5cf6" opacity="0.2"/>
+  <rect x="160" y="140" width="60" height="160" rx="8" fill="#a78bfa" opacity="0.25"/>
+  <rect x="240" y="200" width="60" height="100" rx="8" fill="#8b5cf6" opacity="0.2"/>
+  <rect x="320" y="120" width="60" height="180" rx="8" fill="#a78bfa" opacity="0.3"/>
+  <rect x="400" y="160" width="60" height="140" rx="8" fill="#8b5cf6" opacity="0.2"/>
+  <text x="400" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">Nutri-Fit</text>
+  <text x="400" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#94a3b8">AI-Powered Health &amp; Fitness</text>
+  <rect x="320" y="280" width="160" height="3" rx="1.5" fill="url(#accent)"/>
+</svg>

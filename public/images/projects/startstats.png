@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a3a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2dd4bf;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5eead4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="680" cy="100" r="90" fill="#2dd4bf" opacity="0.1"/>
+  <circle cx="150" cy="380" r="50" fill="#5eead4" opacity="0.08"/>
+  <path d="M80,320 L160,240 L240,280 L320,180 L400,220 L480,140 L560,200 L640,120 L720,180" fill="none" stroke="#2dd4bf" stroke-width="3" opacity="0.5"/>
+  <circle cx="80" cy="320" r="5" fill="#2dd4bf"/>
+  <circle cx="160" cy="240" r="5" fill="#2dd4bf"/>
+  <circle cx="240" cy="280" r="5" fill="#2dd4bf"/>
+  <circle cx="320" cy="180" r="5" fill="#2dd4bf"/>
+  <circle cx="400" cy="220" r="5" fill="#2dd4bf"/>
+  <circle cx="480" cy="140" r="5" fill="#2dd4bf"/>
+  <circle cx="560" cy="200" r="5" fill="#2dd4bf"/>
+  <circle cx="640" cy="120" r="5" fill="#2dd4bf"/>
+  <circle cx="720" cy="180" r="5" fill="#2dd4bf"/>
+  <text x="400" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" font-weight="800" fill="white">StartStats</text>
+  <text x="400" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#94a3b8">R Package for Agronomic Statistics</text>
+  <rect x="320" y="280" width="160" height="3" rx="1.5" fill="url(#accent)"/>
+</svg>
